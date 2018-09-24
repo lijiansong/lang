@@ -1,2 +1,2 @@
 # lang
-miscellaneous code snippet
+Miscellaneous code snippets.
