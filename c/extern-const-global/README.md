@@ -1,0 +1,1 @@
+The linker searches symbols in the order that they appear, so if you have a source file that contains a call to a library function, you need to put it before the library, or the linker won't know that it has to resolve it.
