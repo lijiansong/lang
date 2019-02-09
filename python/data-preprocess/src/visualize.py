@@ -46,6 +46,7 @@ df['Installs'] = df['Installs'].apply(lambda x: x.replace(',', '') if ',' in str
 df['Installs'] = df['Installs'].apply(lambda x: int(x))
 print(type(df['Installs'].values))
 df['Installs'] = df['Installs'].apply(lambda x: float(x))
+df['Installs'].plot()
 
 # Convert all app sizes to MB
 # - Size : Remove 'M', Replace 'k' and divide by 10^-3
@@ -74,6 +75,7 @@ print(df.dtypes)
 # Data visualization
 # This is the basic exploratory analysis to look for any evident patterns or relationships between the features.
 rating = df['Rating'].dropna()
+df['Rating'].hist()
 app_size = df['Size'].dropna()
 installs = df['Installs'][df.Installs!=0].dropna() # Install log level
 reviews = df['Reviews'][df.Reviews!=0].dropna() # Reviews log10 level
