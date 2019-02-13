@@ -32,5 +32,5 @@ if __name__ == '__main__':
     x(3, 4, x = 11, y = 10)
 
     fib = Fibonacci()
-    for i in range(15):
+    for i in range(40):
         print(fib(i), end=", ")
