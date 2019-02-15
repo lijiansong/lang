@@ -1,0 +1,3 @@
+[submodule "go/pluzzers"]
+	path = go/pluzzers
+	url = https://github.com/hyper0x/Golang_Puzzlers.git
