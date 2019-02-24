@@ -1,4 +1,7 @@
 # An example of a class
+
+from mod.utils import mul, scale
+
 class Shape:
 
     def __init__(self, x, y):
@@ -8,7 +11,7 @@ class Shape:
         self.author = "Nobody has claimed to make this shape yet"
 
     def area(self):
-        return self.x * self.y
+        return mul(self.x, self.y)
 
     def perimeter(self):
         return 2 * self.x + 2 * self.y
@@ -19,9 +22,9 @@ class Shape:
     def authorName(self, text):
         self.author = text
 
-    def scaleSize(self, scale):
-        self.x = self.x * scale
-        self.y = self.y * scale
+    def scaleSize(self, _scale):
+        self.x = scale(self.x, _scale)
+        self.y = scale(self.y, _scale)
 
     def showInfo(self):
         print("Shape info: {0:f}, {1:f}, {2:s}".format(self.x, self.y, self.description))
