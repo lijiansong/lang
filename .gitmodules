@@ -1,3 +1,6 @@
 [submodule "go/pluzzers"]
 	path = go/pluzzers
 	url = https://github.com/hyper0x/Golang_Puzzlers.git
+[submodule "python/tvm/tvm-learn"]
+	path = python/tvm/tvm-learn
+	url = https://github.com/landcold7/tvm-learn.git
