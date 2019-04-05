@@ -30,6 +30,6 @@ def hough_circle(file_name):
 
 if __name__ == '__main__':
     #hough_circle('IMG-52.jpg')
-    #hough_circle('white-fine.png')
+    hough_circle('white-fine.png')
     #hough_circle('black-fine.png')
-    hough_circle('empty.png')
+    #hough_circle('empty.png')

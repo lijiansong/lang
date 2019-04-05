@@ -20,4 +20,5 @@ def edge_detection(img_file_name):
     plt.show()
 
 if __name__ == '__main__':
-    edge_detection('IMG-52.jpg')
+    #edge_detection('IMG-52.jpg')
+    edge_detection('IMG-0.jpg')
