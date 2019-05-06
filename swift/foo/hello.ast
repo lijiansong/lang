@@ -1,0 +1,9 @@
+(source_file
+  (top_level_code_decl
+    (brace_stmt
+      (call_expr type='()' location=hello.swift:1:1 range=[hello.swift:1:1 - line:1:22] nothrow arg_labels=_:
+        (declref_expr type='(Any..., String, String) -> ()' location=hello.swift:1:1 range=[hello.swift:1:1 - line:1:1] decl=Swift.(file).print(_:separator:terminator:) function_ref=single)
+        (tuple_shuffle_expr implicit type='(Any..., separator: String, terminator: String)' location=hello.swift:1:7 range=[hello.swift:1:6 - line:1:22] source_is_scalar elements=[-2, -1, -1] variadic_sources=[0] default_args_owner=Swift.(file).print(_:separator:terminator:)
+          (paren_expr type='Any' location=hello.swift:1:7 range=[hello.swift:1:6 - line:1:22]
+            (erasure_expr implicit type='Any' location=hello.swift:1:7 range=[hello.swift:1:7 - line:1:7]
+              (string_literal_expr type='String' location=hello.swift:1:7 range=[hello.swift:1:7 - line:1:7] encoding=utf8 value="Hello, world!" builtin_initializer=Swift.(file).String.init(_builtinStringLiteral:utf8CodeUnitCount:isASCII:) initializer=**NULL**))))))))
