@@ -4,3 +4,6 @@
 [submodule "python/tvm/tvm-learn"]
 	path = python/tvm/tvm-learn
 	url = https://github.com/landcold7/tvm-learn.git
+[submodule "cpp/reflection/rttr"]
+	path = cpp/reflection/rttr
+	url = https://github.com/rttrorg/rttr.git
