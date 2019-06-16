@@ -3,7 +3,7 @@
 #-*- coding: utf-8 -*-
 
 import requests
-import datetime
+from datetime import datetime
 import os
 
 
@@ -525,8 +525,10 @@ def get_weather_info(city_code):
         weather_dict = resp.json()
         yesterday_weather = weather_dict.get('data').get('yesterday')
         today_weather = weather_dict.get('data').get('forecast')[0]
-        today_time = (datetime.datetime.now().strftime('%Y{y}%m{m}%d{d} %H:%M:%S')
+        today_time = (datetime.now().strftime('%Y{y}%m{m}%d{d} %H:%M:%S')
                       .format(y='年', m='月', d='日'))
+        # skip the hour min second
+        today_time = today_time[0:today_time.find(' ')]
         # today notice
         notice = today_weather.get('notice')
 
