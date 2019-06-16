@@ -537,28 +537,33 @@ def get_weather_info(city_code):
         high_c = high[high.find(' ') + 1:]
         low = today_weather.get('low')
         low_c = low[low.find(' ') + 1:]
-        temperature = '今天温度 : {}/{}'.format(low_c, high_c)
+        temperature = '今天温度: {}/{}'.format(low_c, high_c)
 
         # yesterday temperature
         yesterday_high = yesterday_weather.get('high')
         yesterday_high_c = yesterday_high[yesterday_high.find(' ') + 1:]
         yesterday_low = yesterday_weather.get('low')
         yesterday_low_c = yesterday_low[yesterday_low.find(' ') + 1:]
-        yesterday_temperature = '昨天温度 : {}/{}'.format(yesterday_low_c, yesterday_high_c)
+        yesterday_temperature = '昨天温度: {}/{}'.format(yesterday_low_c, yesterday_high_c)
 
         # today wind
         wind_direction = today_weather.get('fx')
         wind_level = today_weather.get('fl')
-        wind = '{} : {}'.format(wind_direction, wind_level)
+        wind = '{}: {}'.format(wind_direction, wind_level)
 
         # today air
         aqi = today_weather.get('aqi')
-        aqi = '空气 : {}'.format(aqi)
+        aqi = '今天空气指数: {}'.format(aqi)
+
+        # yesterday air
+        yesterday_aqi = yesterday_weather.get('aqi')
+        yesterday_aqi = '昨天空气指数: {}'.format(yesterday_aqi)
+
         msg_to_send = (
                 '{today_time}\n{notice}。\n{temperature}\n'
-                '{yesterday_temperature}\n{wind}\n{aqi}\n'.format(
+                '{yesterday_temperature}\n{wind}\n{aqi}\n{yesterday_aqi}\n'.format(
                     today_time=today_time, notice=notice, temperature=temperature,
-                    yesterday_temperature=yesterday_temperature, wind=wind, aqi=aqi))
+                    yesterday_temperature=yesterday_temperature, wind=wind, aqi=aqi, yesterday_aqi=yesterday_aqi))
         return msg_to_send
 
 
