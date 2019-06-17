@@ -553,15 +553,15 @@ def get_weather_info(city_code):
 
         # today air
         aqi = today_weather.get('aqi')
-        aqi = '今天空气指数: {}'.format(aqi)
+        aqi = '今天空气质量(AQI): {}'.format(aqi)
 
         # yesterday air
         yesterday_aqi = yesterday_weather.get('aqi')
-        yesterday_aqi = '昨天空气指数: {}'.format(yesterday_aqi)
+        yesterday_aqi = '昨天空气质量(AQI): {}'.format(yesterday_aqi)
 
         msg_to_send = (
                 '{today_time}\n{notice}。\n{temperature}\n'
-                '{yesterday_temperature}\n{wind}\n{aqi}\n{yesterday_aqi}\n'.format(
+                '{yesterday_temperature}\n{aqi}\n{yesterday_aqi}\n{wind}\n'.format(
                     today_time=today_time, notice=notice, temperature=temperature,
                     yesterday_temperature=yesterday_temperature, wind=wind, aqi=aqi, yesterday_aqi=yesterday_aqi))
         return msg_to_send
