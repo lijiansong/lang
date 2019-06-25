@@ -7,3 +7,9 @@
 [submodule "cpp/reflection/rttr"]
 	path = cpp/reflection/rttr
 	url = https://github.com/rttrorg/rttr.git
+[submodule "gnuplot/examples"]
+	path = gnuplot/examples
+	url = https://github.com/zakird/gnuplot-examples
+[submodule "cpp/antlr-cpp"]
+	path = cpp/antlr-cpp
+	url = https://github.com/unosviluppatore/antlr-cpp.git
