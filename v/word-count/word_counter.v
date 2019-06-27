@@ -4,6 +4,11 @@
 
 import os
 
+// TODO remove once it's possible to call word[i].is_letter()
+fn is_letter(c byte) bool {
+	return c.is_letter()
+}
+
 fn main() {
 	mut path = 'cinderella.txt'
 	if os.args.len != 2 {
@@ -55,8 +60,4 @@ fn filter_word(word string) string {
 	return word.substr(start, end)
 }
 
-// TODO remove once it's possible to call word[i].is_letter()
-fn is_letter(c byte) bool {
-	return c.is_letter()
-}
 
