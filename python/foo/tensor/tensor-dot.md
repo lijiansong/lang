@@ -17,6 +17,8 @@ The lists `a_axes` and `b_axes` specify those pairs of axes along which to contr
 
 The lists `a_axes` and `b_axes` must have identical length and consist of unique integers that specify valid axes for each of the tensors.
 
+This operation corresponds to `numpy.tensordot(a, b, axes)`.
+
 Example 1: When a and b are matrices (order 2), the case axes = 1 is equivalent to matrix multiplication.
 
 Example 2: When `a` and `b` are matrices (order 2), the case `axes = [[1], [0]]` is equivalent to matrix multiplication.
