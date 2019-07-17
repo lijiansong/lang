@@ -5,6 +5,16 @@ struct Point {
 	y int 
 } 
 
+fn accu_sum(n int) int {
+    mut sum := 0
+	mut i := 0
+	for i < n {
+        i++
+        sum += i
+    }
+    return sum
+}
+
 fn main() {
 	areas := ['game', 'web', 'tools', 'science', 'systems', 'GUI', 'mobile'] 
 	for area in areas {
@@ -46,4 +56,6 @@ fn main() {
     	'odd'
     }
     println(s) // ==> "odd"
+
+    println(accu_sum(100))
 }

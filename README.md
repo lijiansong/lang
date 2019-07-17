@@ -1,2 +1,2 @@
 # lang
-Miscellaneous code snippets.
+Miscellaneous code snippets and playground.
