@@ -10,3 +10,6 @@
 [submodule "gnuplot/examples"]
 	path = gnuplot/examples
 	url = https://github.com/zakird/gnuplot-examples
+[submodule "v/vc"]
+	path = v/vc
+	url = https://github.com/vlang/vc.git
