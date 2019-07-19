@@ -13,3 +13,6 @@
 [submodule "v/vc"]
 	path = v/vc
 	url = https://github.com/vlang/vc.git
+[submodule "cpp/arg-parse/cxxopts"]
+	path = cpp/arg-parse/cxxopts
+	url = https://github.com/jarro2783/cxxopts
