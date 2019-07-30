@@ -16,3 +16,6 @@
 [submodule "cpp/arg-parse/cxxopts"]
 	path = cpp/arg-parse/cxxopts
 	url = https://github.com/jarro2783/cxxopts
+[submodule "javascript/history-of-programming-language"]
+	path = javascript/history-of-programming-language
+	url = https://github.com/jasonv/HOPL
