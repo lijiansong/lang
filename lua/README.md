@@ -1,0 +1,2 @@
+- The Evolution of Lua: <http://www.lua.org/doc/hopl.pdf>
+- The Implementation of Lua 5.0: <https://www.lua.org/doc/jucs05.pdf>
