@@ -1,9 +1,14 @@
-# lang
+# Timeline of PLs
 
-This repo focuses on some interesting things related to programming language.
+Timeline of programming languages:
 
-It contains many miscellaneous code snippets.
 
-- Timeline of programming languages:<https://en.wikipedia.org/wiki/Timeline_of_programming_languages>
-- Predecessors and descendants of each programming language up to now: <https://lijiansong.github.io/clang-llvm-tutorial/>
-- Pixel's study for programming languages: <http://rigaux.org/language-study/>
+  ![image](./imgs/lang-diagram.png "Source: http://rigaux.org/language-study/diagram.png")
+
+## REFs
+
+- <https://en.wikipedia.org/wiki/Timeline_of_programming_languages>
+- <https://en.wikipedia.org/wiki/History_of_programming_languages>
+- <https://www.levenez.com/lang/>
+- <http://www.jasonv.com/HOPL/>
+

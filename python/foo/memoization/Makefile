@@ -1,2 +1,0 @@
-all:
-	@python memoize.py
