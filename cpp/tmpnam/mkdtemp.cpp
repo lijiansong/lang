@@ -1,7 +1,9 @@
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #include <iostream>
-#include <string>
+
+#include <unistd.h> //mkdtemp
 
 //#define DISABLE
 
@@ -40,27 +42,8 @@ namespace fs = std::filesystem;
 #endif // DISABLE
 
 int main() {
-  // std::tmpnam
-  std::string name1 = std::tmpnam(nullptr);
-  std::cout << "temporary file name: " << name1 << '\n';
-
-  char name2[L_tmpnam];
-  if (std::tmpnam(name2)) {
-    std::cout << "temporary file name: " << name2 << '\n';
-  }
-
-#ifdef DISABLE
-  // std::tmpfile
-  std::FILE *tmpf = std::tmpfile();
-  std::fputs("Hello, world", tmpf);
-  std::rewind(tmpf);
-  char buf[6];
-  std::fgets(buf, sizeof buf, tmpf);
-  std::cout << buf << '\n';
-
-  // Linux-specific method to display the tmpfile name
-  std::cout << fs::read_symlink(fs::path("/proc/self/fd") /
-                                std::to_string(fileno(tmpf)))
-            << '\n';
-#endif // DISABLE
+  // http://man7.org/linux/man-pages/man3/mkdtemp.3.html
+  char tmp_name[L_tmpnam];
+  mkdtemp(strcpy(tmp_name, "/tmp/phaeton-XXXXXXXXX"));
+  std::cout << "temporary file name: " << tmp_name << '\n';
 }
