@@ -1,0 +1,2 @@
+all:
+	@brainfuck hello.bf
