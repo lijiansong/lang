@@ -19,3 +19,6 @@
 [submodule "javascript/history-of-programming-language"]
 	path = javascript/history-of-programming-language
 	url = https://github.com/jasonv/HOPL
+[submodule "c/just-for-fun/game-of-life"]
+	path = c/just-for-fun/game-of-life
+	url = https://github.com/duckythescientist/obfuscatedLife
