@@ -1,4 +1,4 @@
-from sklearn import linear_model
+#!/usr/bin/env python3
 
 def get_data(file_name):
     file_reader = open(file_name, 'r')
@@ -20,11 +20,6 @@ def get_data(file_name):
         if file_reader:
             file_reader.close()
     return x_list, y_list
-
-def get_lr_model(X, y):
-    clf = linear_model.LinearRegression()
-    clf.fit(X, y)
-    return clf.coef_
 
 if __name__ == '__main__':
     print('===---------------- dense int8 ----------------===')

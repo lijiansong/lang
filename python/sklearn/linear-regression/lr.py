@@ -42,10 +42,10 @@ def get_lr_model(X, y):
     return clf.coef_
 
 if __name__ == '__main__':
-    X, y = get_data('dense-fp16-fifo.txt')
-    print(len(X), len(y))
     clf = linear_model.LinearRegression()
     print('===---------------- dense fp16 fifo ----------------===')
+    X, y = get_data('dense-fp16-fifo.txt')
+    print(len(X), len(y))
     clf.fit(X, y)
     print(clf.coef_)
     print('===---------------- dense fp16 ----------------===')
@@ -55,6 +55,12 @@ if __name__ == '__main__':
     print(clf.coef_)
     print('===---------------- dense int8 ----------------===')
     X, y = get_data('int8-dense.txt')
+    print(len(X), len(y))
+    clf.fit(X, y)
+    print(clf.coef_)
+
+    print('===---------------- dense int8 191031 ----------------===')
+    X, y = get_data('int8-dense-191031.txt')
     print(len(X), len(y))
     clf.fit(X, y)
     print(clf.coef_)

@@ -134,12 +134,63 @@ def extract_total_exe_time(exe_time_file_path):
         file_reader.close()
         file_writer.close()
 
+def extract_io_time(in_time_file_path, io_suffix):
+    file_reader = open(in_time_file_path, 'r')
+    prefix = os.getcwd().split("/")[-2]
+    file_writer = open(prefix + io_suffix, 'w')
+    sparse_round_count = {}
+    res_dict = {}
+    try:
+        text_lines = file_reader.readlines()
+        print(type(text_lines))
+        #print(text_lines)
+        for line in text_lines:
+            line = line.rstrip('\n')
+            #print(line)
+            line_str = line.split(":")
+            #print(line_str)
+            io_time = line_str[3]
+            #print(io_time)
+            # exe_time will be like this:
+            # 385 us
+            io_time, _ = io_time.split()
+            #print(io_time)
+            io_time = float(io_time)
+            _, _, _, sparsity_num, batch_size, data_parallel, model_parallel, thread_num, _, round_num = line_str[0].split("-")
+            sparsity_num = float(sparsity_num)
+            round_num = int(round_num)
+            # Note: sparse_round_count is a dict, whose key is 'sparsity_num', value is a set of 'round_num'.
+            if sparsity_num in sparse_round_count:
+                sparse_round_count[sparsity_num].add(round_num)
+            else:
+                sparse_round_count[sparsity_num]=set()
+                sparse_round_count[sparsity_num].add(round_num)
+            batch_size = re.findall(r'\d+', batch_size)
+            res_dict[sparsity_num] = res_dict.get(sparsity_num, 0) + io_time
+
+        print(res_dict)
+        print(sparse_round_count)
+        od = collections.OrderedDict(sorted(res_dict.items()))
+        # write to file
+        for k, v in od.items():
+            res = str(k) + ',' + str(v/len(sparse_round_count[k])) + '\n'
+            file_writer.write(res)
+    finally:
+        file_reader.close()
+        file_writer.close()
+
 if __name__ == '__main__':
-    if len(sys.argv) < 4:
-        sys.exit("Usage: must 4 args!")
+    if len(sys.argv) < 7:
+        sys.exit("Usage: must 7 args!")
     end2end_file = sys.argv[1]
     hw_fps_file = sys.argv[2]
     time_log_file = sys.argv[3]
-    extract_end2end_fps(end2end_file)
-    extract_hardware_fps(hw_fps_file)
-    extract_total_exe_time(time_log_file)
+    prepare_input_log_file = sys.argv[4]
+    copyin_log_file = sys.argv[5]
+    copyout_log_file = sys.argv[6]
+    #extract_end2end_fps(end2end_file)
+    #extract_hardware_fps(hw_fps_file)
+    #extract_total_exe_time(time_log_file)
+    extract_io_time(prepare_input_log_file, "-prepare_input_time.txt")
+    extract_io_time(copyin_log_file, "-copyin_time.txt")
+    extract_io_time(copyout_log_file, "-copyout_time.txt")
