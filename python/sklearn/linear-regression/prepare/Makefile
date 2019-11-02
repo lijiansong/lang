@@ -1,3 +1,3 @@
 all:
-	python3 prepare.py
+	python3 get-heat-map.py
 
