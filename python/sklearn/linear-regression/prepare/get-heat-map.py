@@ -371,9 +371,17 @@ def get_tn_vs_mp(in_file_name, out_file_name):
             file_writer.close()
 if __name__ == '__main__':
     print('===---------------- dense int8 ----------------===')
+    # for end2end fps
     get_bs_vs_tn('int8-dense-191031.txt', 'bs_tn.txt')
     get_bs_vs_dp('int8-dense-191031.txt', 'bs_dp.txt')
     get_bs_vs_mp('int8-dense-191031.txt', 'bs_mp.txt')
     get_tn_vs_dp('int8-dense-191031.txt', 'tn_dp.txt')
     get_tn_vs_mp('int8-dense-191031.txt', 'tn_mp.txt')
     get_dp_vs_mp('int8-dense-191031.txt', 'dp_mp.txt')
+    # for hardware fps
+    get_bs_vs_tn('int8-dense-191031-hw-fps.txt', 'hw-bs_tn.txt')
+    get_bs_vs_dp('int8-dense-191031-hw-fps.txt', 'hw-bs_dp.txt')
+    get_bs_vs_mp('int8-dense-191031-hw-fps.txt', 'hw-bs_mp.txt')
+    get_tn_vs_dp('int8-dense-191031-hw-fps.txt', 'hw-tn_dp.txt')
+    get_tn_vs_mp('int8-dense-191031-hw-fps.txt', 'hw-tn_mp.txt')
+    get_dp_vs_mp('int8-dense-191031-hw-fps.txt', 'hw-dp_mp.txt')

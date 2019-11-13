@@ -24,7 +24,7 @@ def plot_heatmap(in_file_name, out_fig_name, xlabel_name, ylabel_name, xtick_lab
     _, ax = plt.subplots(figsize=(6, 5))
     #p1 = sns.heatmap(df, cmap='Reds', annot=True)
     #fig = sns.heatmap(df, cmap='Reds', ax=ax, cbar_kws={'label': 'End to end FPS'}, linewidths=0.01, linecolor='black')
-    fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'End to end FPS'}, linewidths=0.01, linecolor='black')
+    fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'Hardware FPS'}, linewidths=0.01, linecolor='black')
     #fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'End to end FPS'}, linewidths=0.0, linecolor='black')
     plt.xlabel(xlabel_name)
     plt.ylabel(ylabel_name)
@@ -42,10 +42,10 @@ if __name__ == '__main__':
     tn_ticklabels = ['1', '2', '4', '8', '16', '32', '64', '128']
     mp_ticklabels = ['1', '2', '4', '8', '16', '32']
     dp_ticklabels = ['1', '2', '4', '8', '16', '32']
-    plot_heatmap('bs_mp.txt', 'bs_mp.png', 'model parallelism', 'batch size', mp_ticklabels, bs_ticklabels)
-    plot_heatmap('dp_mp.txt', 'dp_mp.png', 'model parallelism', 'data parallelism', mp_ticklabels, dp_ticklabels)
-    plot_heatmap('bs_dp.txt', 'bs_dp.png', 'data parallelism', 'batch size', dp_ticklabels, bs_ticklabels)
-    plot_heatmap('bs_tn.txt', 'bs_tn.png', 'thread number', 'batch size', tn_ticklabels, bs_ticklabels)
-    plot_heatmap('tn_dp.txt', 'tn_dp.png', 'thread number', 'data parallelism', tn_ticklabels, dp_ticklabels)
-    plot_heatmap('tn_mp.txt', 'tn_mp.png', 'thread number', 'model parallelism', tn_ticklabels, mp_ticklabels)
+    plot_heatmap('hw-bs_mp.txt', 'hw-bs_mp.png', 'model parallelism', 'batch size', mp_ticklabels, bs_ticklabels)
+    plot_heatmap('hw-dp_mp.txt', 'hw-dp_mp.png', 'model parallelism', 'data parallelism', mp_ticklabels, dp_ticklabels)
+    plot_heatmap('hw-bs_dp.txt', 'hw-bs_dp.png', 'data parallelism', 'batch size', dp_ticklabels, bs_ticklabels)
+    plot_heatmap('hw-bs_tn.txt', 'hw-bs_tn.png', 'thread number', 'batch size', tn_ticklabels, bs_ticklabels)
+    #plot_heatmap('hw-tn_dp.txt', 'hw-tn_dp.png', 'thread number', 'data parallelism', tn_ticklabels, dp_ticklabels)
+    #plot_heatmap('hw-tn_mp.txt', 'hw-tn_mp.png', 'thread number', 'model parallelism', tn_ticklabels, mp_ticklabels)
 
