@@ -1,0 +1,168 @@
+ <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Aaron Smith</span></td>
+    <td class="pl pl_affiliation">Microsoft Research</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Andrew Adams</span></td>
+    <td class="pl pl_affiliation">Facebook</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Antonia Zhai</span></td>
+    <td class="pl pl_affiliation">University of Minnesota</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Ben Hardekopf</span></td>
+    <td class="pl pl_affiliation">UC Santa Barbara</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Björn Franke</span></td>
+    <td class="pl pl_affiliation">University of Edinburgh</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Bruce Childers</span></td>
+    <td class="pl pl_affiliation">University of Pittsburgh</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Changhee Jung</span></td>
+    <td class="pl pl_affiliation">Purdue University</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Christophe Dubach</span></td>
+    <td class="pl pl_affiliation">University of Edinburgh</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Damian Dechev</span></td>
+    <td class="pl pl_affiliation">University of Central Florida</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Derek Bruening</span></td>
+    <td class="pl pl_affiliation">Google</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Erik Altman</span></td>
+    <td class="pl pl_affiliation">IBM Research</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Fabrice Rastello</span></td>
+    <td class="pl pl_affiliation">INRIA</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Fredrik Kjolstad</span></td>
+    <td class="pl pl_affiliation">MIT CSAIL</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Gennady Pekhimenko</span></td>
+    <td class="pl pl_affiliation">University of Toronto</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Guilherme Ottoni</span></td>
+    <td class="pl pl_affiliation">Facebook</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Guoyang Chen</span></td>
+    <td class="pl pl_affiliation">Alibaba Group US Inc.</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Huimin Cui</span></td>
+    <td class="pl pl_affiliation">Chinese Academy of Sciences</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Jaejin Lee</span></td>
+    <td class="pl pl_affiliation">Seoul National University</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Jingling Xue</span> <span class="pcrole">chair</span></td>
+    <td class="pl pl_affiliation">University of New South Wales</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Jose Nelson Amaral</span></td>
+    <td class="pl pl_affiliation">University of Alberta</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Lisa Wu Wills</span></td>
+    <td class="pl pl_affiliation">Duke University</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Louis-Noel Pouchet</span></td>
+    <td class="pl pl_affiliation">Colorado State University</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Mahmut Taylan Kandemir</span></td>
+    <td class="pl pl_affiliation">Penn State, USA</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Maria Garzaran</span></td>
+    <td class="pl pl_affiliation">Intel/UIUC</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Michel Steuwer</span></td>
+    <td class="pl pl_affiliation">University of Glasgow</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Pen-Chung Yew</span></td>
+    <td class="pl pl_affiliation">Univ. of Minnesota</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Peng Wu</span> <span class="pcrole">chair</span></td>
+    <td class="pl pl_affiliation">Futurewei Technologies</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Raj Barik</span></td>
+    <td class="pl pl_affiliation">Uber</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Rajiv Gupta</span></td>
+    <td class="pl pl_affiliation">UC Riverside</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Sanjay Rajopadhye</span></td>
+    <td class="pl pl_affiliation">Colorado State University</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Simone Campanoni</span></td>
+    <td class="pl pl_affiliation">Northwestern University</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Snehasish Kumar</span></td>
+    <td class="pl pl_affiliation">Google</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Sreepathi Pai</span></td>
+    <td class="pl pl_affiliation">University of Rochester</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Svilen Kanev</span></td>
+    <td class="pl pl_affiliation">Google</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Teresa Johnson</span></td>
+    <td class="pl pl_affiliation">Google</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Timothy Jones</span></td>
+    <td class="pl pl_affiliation">University of Cambridge</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Tobias Grosser</span></td>
+    <td class="pl pl_affiliation">ETH Zurich</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Vijay Janapa Reddi</span></td>
+    <td class="pl pl_affiliation">Harvard/UT Austin/Google</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Walter Binder</span></td>
+    <td class="pl pl_affiliation">University of Lugano</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Xipeng Shen</span></td>
+    <td class="pl pl_affiliation">North Carolina State University</td>
+  </tr>
+  <tr class="pl k0 plnx">
+    <td class="pl pl_name"><span class="taghl">Xu Liu</span></td>
+    <td class="pl pl_affiliation">College of William &amp; Mary</td>
+  </tr>
+  <tr class="pl k1 plnx">
+    <td class="pl pl_name"><span class="taghl">Zheng Wang</span></td>
+    <td class="pl pl_affiliation">University of Leeds</td>
+  </tr>
