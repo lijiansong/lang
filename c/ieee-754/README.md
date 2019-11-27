@@ -67,6 +67,12 @@ Google的TPU为何要采用BFloat16?
 
 <https://cloud.google.com/blog/products/ai-machine-learning/bfloat16-the-secret-to-high-performance-on-cloud-tpus>
 
+TensorFlow中BFloat16的实现：
+
+[bfloat16.h](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/bfloat16.h) and [bfloat16.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/bfloat16.cc)
+
+测试用例：
+[bfloat16_test.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/bfloat16_test.cc)
 
 
 
