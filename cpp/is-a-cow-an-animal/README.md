@@ -1,4 +1,4 @@
-##  Is a Cow an Animal?
+## Is a Cow an Animal?
 
 From these examples, Pixel try to extract a real problem which "Is a Cow an Animal?" is trying to solve.
 
@@ -48,8 +48,7 @@ when slaughtered:
 - a human becomes dead_human
 
 
-
-
+TODO: Try to re-implement this problem.
 
 ## REFs
 
