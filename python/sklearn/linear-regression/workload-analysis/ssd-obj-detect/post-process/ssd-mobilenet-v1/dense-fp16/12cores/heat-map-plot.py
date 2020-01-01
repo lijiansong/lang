@@ -38,8 +38,10 @@ def plot_heatmap(in_file_name, out_fig_name, xlabel_name, ylabel_name, xtick_lab
     plt.show()
 
 if __name__ == '__main__':
-    bs_ticklabels = ['1', '2', '4', '8', '16', '32', '64']
-    tn_ticklabels = ['1', '2', '4', '8', '16', '32', '64']
+    #bs_ticklabels = ['1', '2', '4', '8', '16', '32', '64']
+    #tn_ticklabels = ['1', '2', '4', '8', '16', '32', '64']
+    bs_ticklabels = ['1', '2', '4', '8', '16', '32']
+    tn_ticklabels = ['1', '2', '4', '8', '16', '32']
     mp_ticklabels = ['1', '2', '4', '8', '16', '32']
     dp_ticklabels = ['1', '2', '4', '8', '16', '32']
     plot_heatmap('bs_mp.txt', 'bs_mp.png', 'model parallelism', 'batch size', mp_ticklabels, bs_ticklabels)

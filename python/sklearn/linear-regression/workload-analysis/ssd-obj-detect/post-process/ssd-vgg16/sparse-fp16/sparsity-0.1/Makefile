@@ -5,5 +5,8 @@ plot:
 data:
 	@python3 get-heat-map.py
 
+lr:
+	@python3 lr.py
+
 clean:
 	@rm -f *.pyc

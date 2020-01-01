@@ -16,7 +16,8 @@ def get_bs_vs_tn(in_file_name, out_file_name, best_config_list):
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -70,7 +71,8 @@ def get_dp_vs_mp(in_file_name, out_file_name, best_config_list):
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -125,7 +127,8 @@ def get_heat_map_data(in_file_name, out_file_name, column_opt_dict, row_opt_dict
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -182,7 +185,8 @@ def get_bs_vs_dp(in_file_name, out_file_name, best_config_list):
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -238,7 +242,8 @@ def get_bs_vs_mp(in_file_name, out_file_name, best_config_list):
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -293,7 +298,8 @@ def get_tn_vs_dp(in_file_name, out_file_name, best_config_list):
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -348,7 +354,8 @@ def get_tn_vs_mp(in_file_name, out_file_name, best_config_list):
     best_bs, best_dp, best_mp, best_tn = best_config_list[0], best_config_list[1], best_config_list[2], best_config_list[3]
     #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8, 256:9, 512:10, 1024:11}
     #thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7, 128:8}
-    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    #batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
+    batch_size_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     thread_num_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6, 64:7}
     data_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
     model_parallel_index_dict={1:1, 2:2, 4:3, 8:4, 16:5, 32:6}
@@ -387,12 +394,11 @@ def get_tn_vs_mp(in_file_name, out_file_name, best_config_list):
             file_reader.close()
             file_writer.close()
 if __name__ == '__main__':
-    mobilenet_dense_int8_best_config_list = [1, 2, 1, 8]
-    get_bs_vs_tn('ssd_mobilenetv1-dense-int8-191216.txt', 'bs_tn.txt', mobilenet_dense_int8_best_config_list)
-    get_bs_vs_dp('ssd_mobilenetv1-dense-int8-191216.txt', 'bs_dp.txt', mobilenet_dense_int8_best_config_list)
-    get_bs_vs_mp('ssd_mobilenetv1-dense-int8-191216.txt', 'bs_mp.txt', mobilenet_dense_int8_best_config_list)
-    get_tn_vs_dp('ssd_mobilenetv1-dense-int8-191216.txt', 'tn_dp.txt', mobilenet_dense_int8_best_config_list)
-    get_tn_vs_mp('ssd_mobilenetv1-dense-int8-191216.txt', 'tn_mp.txt', mobilenet_dense_int8_best_config_list)
-    get_dp_vs_mp('ssd_mobilenetv1-dense-int8-191216.txt', 'dp_mp.txt', mobilenet_dense_int8_best_config_list)
-
+    ssd_mobilenetv1_dense_int8_best_config_list = [1, 2, 1, 8]
+    get_bs_vs_tn('ssd_mobilenetv1-dense-int8.txt', 'bs_tn.txt', ssd_mobilenetv1_dense_int8_best_config_list)
+    get_bs_vs_dp('ssd_mobilenetv1-dense-int8.txt', 'bs_dp.txt', ssd_mobilenetv1_dense_int8_best_config_list)
+    get_bs_vs_mp('ssd_mobilenetv1-dense-int8.txt', 'bs_mp.txt', ssd_mobilenetv1_dense_int8_best_config_list)
+    #get_tn_vs_dp('ssd_mobilenetv1-dense-int8.txt', 'tn_dp.txt', ssd_mobilenetv1_dense_int8_best_config_list)
+    #get_tn_vs_mp('ssd_mobilenetv1-dense-int8.txt', 'tn_mp.txt', ssd_mobilenetv1_dense_int8_best_config_list)
+    get_dp_vs_mp('ssd_mobilenetv1-dense-int8.txt', 'dp_mp.txt', ssd_mobilenetv1_dense_int8_best_config_list)
 
