@@ -361,7 +361,7 @@ def get_tn_vs_mp(in_file_name, out_file_name, best_config_list):
             line = line.rstrip('\n')
             line = line.split('\t')
             batch_size, data_parallel, model_parallel, thread_num, fifo_size, end2end_fps = int(line[0]), int(line[1]), int(line[2]), int(line[3]), int(line[4]), float(line[5])
-            if model_parallel == best_mp and batch_size == best_bs:
+            if data_parallel == best_dp and batch_size == best_bs:
                 index = (thread_num_index_dict[thread_num] - 1) * len(model_parallel_index_dict) + model_parallel_index_dict[model_parallel] - 1
                 res_list[index] = end2end_fps
         print(len(res_list), res_list)
@@ -391,7 +391,7 @@ if __name__ == '__main__':
     get_bs_vs_tn('densenet121-sparse-fp16.txt', 'bs_tn.txt', densenet121_dense_fp16_best_config_list)
     get_bs_vs_dp('densenet121-sparse-fp16.txt', 'bs_dp.txt', densenet121_dense_fp16_best_config_list)
     get_bs_vs_mp('densenet121-sparse-fp16.txt', 'bs_mp.txt', densenet121_dense_fp16_best_config_list)
-    #get_tn_vs_dp('densenet121-sparse-fp16.txt', 'tn_dp.txt', densenet121_dense_fp16_best_config_list)
-    #get_tn_vs_mp('densenet121-sparse-fp16.txt', 'tn_mp.txt', densenet121_dense_fp16_best_config_list)
+    get_tn_vs_dp('densenet121-sparse-fp16.txt', 'tn_dp.txt', densenet121_dense_fp16_best_config_list)
+    get_tn_vs_mp('densenet121-sparse-fp16.txt', 'tn_mp.txt', densenet121_dense_fp16_best_config_list)
     get_dp_vs_mp('densenet121-sparse-fp16.txt', 'dp_mp.txt', densenet121_dense_fp16_best_config_list)
 

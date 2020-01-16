@@ -46,6 +46,8 @@ if __name__ == '__main__':
     plot_heatmap('dp_mp.txt', 'dp_mp.png', 'model parallelism', 'data parallelism', mp_ticklabels, dp_ticklabels)
     plot_heatmap('bs_dp.txt', 'bs_dp.png', 'data parallelism', 'batch size', dp_ticklabels, bs_ticklabels)
     plot_heatmap('bs_tn.txt', 'bs_tn.png', 'thread number', 'batch size', tn_ticklabels, bs_ticklabels)
+    plot_heatmap('tn_dp.txt', 'tn_dp.png', 'data parallelism', 'thread number', dp_ticklabels, tn_ticklabels)
+    plot_heatmap('tn_mp.txt', 'tn_mp.png', 'model parallelism', 'thread number', mp_ticklabels, tn_ticklabels)
     #plot_heatmap('hw-tn_dp.txt', 'hw-tn_dp.png', 'thread number', 'data parallelism', tn_ticklabels, dp_ticklabels)
     #plot_heatmap('hw-tn_mp.txt', 'hw-tn_mp.png', 'thread number', 'model parallelism', tn_ticklabels, mp_ticklabels)
 
