@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CNRT_ERR_DIR_NAME=cnrt-error
-LOG_PREFIX=ssd_mobilenetv1.log-fp16-sparse-*
+LOG_PREFIX=mobilenet.log-float16-sparse-*
 
 if [ ! -d ${CNRT_ERR_DIR_NAME} ]
 then
@@ -17,7 +17,9 @@ grep -rin "Total execution time" ${LOG_PREFIX} 2>&1 | tee total-exe-time.log
 #python3 extract_acc.py acc.log
 mv end2end-fps.log hardware-fps.log total-exe-time.log scripts
 
-#grep -rin "prepare input data" ${LOG_PREFIX} 2>&1 | tee prepare-input.log
-#grep -rin "copyin time" ${LOG_PREFIX} 2>&1 | tee copyin-time.log
-#grep -rin "copyout time" ${LOG_PREFIX} 2>&1 | tee copyout-time.log
-#mv prepare-input.log copyin-time.log copyout-time.log scripts
+grep -rin "prepare input data" ${LOG_PREFIX} 2>&1 | tee prepare-input.log
+grep -rin "copyin time" ${LOG_PREFIX} 2>&1 | tee copyin-time.log
+grep -rin "execution time" ${LOG_PREFIX} 2>&1 | tee execution-time.log
+grep -rin "copyout time" ${LOG_PREFIX} 2>&1 | tee copyout-time.log
+grep -rin "post process time" ${LOG_PREFIX} 2>&1 | tee post-process-time.log
+mv prepare-input.log copyin-time.log execution-time.log copyout-time.log post-process-time.log scripts
