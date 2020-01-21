@@ -165,7 +165,7 @@ def extract_total_exe_time(exe_time_file_path):
         file_reader.close()
         file_writer.close()
 
-def extract_preprare_input(prepare_input_file_path):
+def extract_prepare_input(prepare_input_file_path):
     file_reader = open(prepare_input_file_path, 'r')
     prefix = os.getcwd().split("/")[-2]
     file_writer = open(prefix + '-prepare_input.txt', 'w')
@@ -428,7 +428,7 @@ if __name__ == '__main__':
     extract_end2end_fps(end2end_file)
     extract_hardware_fps(hw_fps_file)
     extract_total_exe_time(time_log_file)
-    extract_preprare_input(prepare_input_time_file)
+    extract_prepare_input(prepare_input_time_file)
     extract_copyin_time(copyin_time_file)
     extract_execution_time(execution_time_file)
     extract_copyout_time(copyout_time_file)
