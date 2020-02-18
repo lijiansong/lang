@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+'''
+REFs: <https://matplotlib.org/gallery/pyplots/boxplot_demo_pyplot.html#sphx-glr-gallery-pyplots-boxplot-demo-pyplot-py>
+'''
 def get_data(file_name, network_list=['MobileNet', 'SqueezeNet', 'DenseNet121', 'ResNet50']):
     file_reader = open(file_name, 'r')
     res_list = [[] for _ in network_list]

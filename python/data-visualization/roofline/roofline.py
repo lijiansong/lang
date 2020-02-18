@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 import seaborn as sns;
+import pickle
 
 colors = sns.color_palette("hls", n_colors=11)
 
@@ -86,6 +87,7 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
 
     colormap = {}
     if scale == 'absolute':
+      print('---> reach absolute')
       flops = np.multiply(d['flops_perc'], tpu_peak/100)
     else:
       flops = d['flops_perc']
@@ -93,12 +95,22 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
     labels = d['labels']
     intensity = d['intensity']
     time = d['time_perc']
+    print('flops len: ', len(flops), 'flops:', flops)
+    print('intensity len: ', len(intensity), 'intensity:', intensity)
+    flops_info_writer = open('flops_info.txt', 'wb')
+    intensity_info_writer = open('intensity_info.txt', 'wb')
+    pickle.dump(flops, flops_info_writer)
+    pickle.dump(intensity, intensity_info_writer)
+    intensity_info_writer.close()
+    flops_info_writer.close()
+
     if color_dim == '':
         if color == 0:
           ax.plot(d['intensity'], flops, '.', label=label)
         else:
           ax.plot(d['intensity'], flops, '.', label=label, color=color, alpha=0.9)
     else:
+        print('===> reach else')
         hist = {}
         for i in range(len(labels)):
             l = d['labels'][i]
@@ -114,13 +126,17 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
             hist[k] = v*1.0/len(labels)
 
         m = {}
+        print('len hist:', len(hist))
         mycolors = sns.color_palette("hls", n_colors=len(hist)+2)
+        print('color_dim: ', color_dim)
+        print('labels len:', len(labels))
         for i in range(len(labels)):
             if time[i] < thre:
               continue
             if intensity[i]<=0 or flops[i]<=0:
               continue
             l = labels[i]
+            print(l)
             n = get_n_from_label(l, color_dim)
 
             if color_map != {}:
@@ -132,10 +148,13 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
                       m[n] = 1
                 continue
             if n in m:
+                print('++++> n in m')
+                print('n: ', n, 'm: ', m)
+                print('mycolors:', mycolors)
                 ax.plot(intensity[i], flops[i], '.',
                         color=mycolors[m[n]], marker='.')
             elif not n in m:
-
+                print('====++++> elif not n in m')
                 m[n] = len(m) % len(colors)
                 colormap[n] = mycolors[m[n]]
                 ax.plot(intensity[i], flops[i], '.',
@@ -143,7 +162,9 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
                         #markeredgecolor='black', markeredgewidth=0.5,
                         marker='.')
         if color_dim != 'op':
+            print('---------> reach if ---->')
             handles, ls = ax.get_legend_handles_labels()
+            print('ls:', ls)
             ls = [int(i) for i in ls]
             ls, handles = zip(*sorted(zip(ls, handles), key=lambda t: t[0]))
             ls = [color_dim + '-' + str(i) for i in ls]
@@ -151,24 +172,30 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
         else:
             ax.legend(frameon=True, bbox_to_anchor=(1, 0.5))
 
+    # tpu_peak=180e3, membdw_peak=2400
     x1 = tpu_peak / membdw_peak
     y1 = tpu_peak
 
     if max(d['intensity']) > x1:
         if color == 0:
+            print("reach here: ------> 0")
+            print(max(d['intensity']))
             ax.hlines(y=y1, xmin=x1,
                 xmax=max(d['intensity']), linewidth=2, color=colors[0])
         else:
             ax.hlines(y=y1, xmin=x1,
                 xmax=max(d['intensity']), linewidth=2, color=color)
 
+    print(min(d['flops_perc']))
     x2 = min(d['flops_perc'])*(tpu_peak/100)/membdw_peak
     y2 = min(d['flops_perc'])*(tpu_peak/100)
 
     if scale == 'relative':
+        print("reach here: ------> relative")
         y1 = 100
         y2 = x2 * membdw_peak / tpu_peak * 100
     if color == 0:
+        print("reach here: color == 0")
         ax.plot([x1, x2], [y1, y2], linewidth=2, color=colors[0])
     else:
         ax.plot([x1, x2], [y1, y2], linewidth=2, color=color)
@@ -176,15 +203,17 @@ def plot_roofline(f, ax, d, tpu_peak, membdw_peak, \
     ax.set_yscale('log')
     ax.set_xscale('log')
     if scale == 'absolute':
-      ax.set_ylabel('GFLOPS', fontsize=15)
+        print("reach here: ------> absolute")
+        ax.set_ylabel('GFLOPS', fontsize=15)
     else:
-      ax.set_ylabel('FLOPS %', fontsize=15)
-      ax.set_ylim(top=100)
+        ax.set_ylabel('FLOPS %', fontsize=15)
+        ax.set_ylim(top=100)
     ax.set_xlabel('Floating Ops/Byte', fontsize=15)
     ax.set_title(title, fontsize=15)
 
     if colormap == {}:
         colormap = color_map
+    print('colormap:', colormap)
     return f, ax, colormap
 
 if __name__ == '__main__':
@@ -198,8 +227,9 @@ if __name__ == '__main__':
 
     # sort the legend
     handles, ls = ax.get_legend_handles_labels()
+    print(ls)
     ls = [int(i) for i in ls if i.isdigit()]
     ls, handles = zip(*sorted(zip(ls, handles), key=lambda t: t[0]))
     ls = [color_dim + '-' + str(i) for i in ls]
-    ax.legend(handles, ls, frameon=True, fontsize=10)
-    plt.show()
+    ax.legend(handles, ls, frameon=True, fontsize=10, loc = 'best')
+    #plt.show()
