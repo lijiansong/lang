@@ -22,7 +22,7 @@ print(input_dims)
 for i in input_dims:
     if not pd.isna(i):
         tup = [int(i) for i in i.split(',')]
-        print(tup[0]*tup[1]*tup[2]*tup[3]*2/1024)
+        print(tup[0]*tup[1]*tup[2]*tup[3]*2/1024.)
 
 print("==================== Filter ======================")
 filter_dims = data["Filter"].tolist()
@@ -30,7 +30,7 @@ print(filter_dims)
 for i in filter_dims:
     if not pd.isna(i):
         tup = [int(i) for i in i.split(',')]
-        print(tup[0]*tup[1]*tup[2]*tup[3]*2/1024)
+        print(tup[0]*tup[1]*tup[2]*tup[3]*2/1024.)
 
 print("==================== Output ======================")
 out_dims = data["Output"].tolist()
@@ -38,7 +38,7 @@ print(out_dims)
 for i in out_dims:
     if not pd.isna(i):
         tup = [int(i) for i in i.split(',')]
-        print(tup[0]*tup[1]*tup[2]*tup[3]*2/1024)
+        print(tup[0]*tup[1]*tup[2]*tup[3]*2/1024.)
 
 # geo mean
 xs = [0.87416137,
