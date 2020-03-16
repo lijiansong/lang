@@ -2,14 +2,16 @@
 
 #grep -rin "forward:" cpu-mobilenet-1batch-fp32.log 2>&1 | tee time.log
 #sed -i "s/input/data/" time.log
+#grep -rin "Average Forward pass" cpu-mobilenet-1batch-fp32.log 2>&1 | tee forward.log
 #grep -rin cycles cpu-profiling-mobilenet-1batch-fp32-flops.log 2>&1 | tee cycles.log
 #grep -rin "imc/cas_count_read/" cpu-profiling-mobilenet-1batch-fp32-membwd.log 2>&1 | tee cas_count_read.log
 #grep -rin "imc/cas_count_write/" cpu-profiling-mobilenet-1batch-fp32-membwd.log 2>&1 | tee cas_count_write.log
 #python2 extract_layer_time.py mobilenet_float16_dense_1batch-online.prototxt time.log 1
 #python excel_io.py
-
+#
 #grep -rin "forward:" cpu-ssd_mobilenetv1-1batch-fp32.log 2>&1 | tee time.log
 #sed -i "s/input/data/" time.log
+#grep -rin "Average Forward pass" cpu-mobilenet-1batch-fp32.log 2>&1 | tee forward.log
 #grep -rin cycles cpu-profiling-ssd_mobilenetv1-1batch-fp32-flops.log 2>&1 | tee cycles.log
 #grep -rin "imc/cas_count_read/" cpu-profiling-ssd_mobilenetv1-1batch-fp32-membwd.log 2>&1 | tee cas_count_read.log
 #grep -rin "imc/cas_count_write/" cpu-profiling-ssd_mobilenetv1-1batch-fp32-membwd.log 2>&1 | tee cas_count_write.log
@@ -46,6 +48,7 @@ for batch in ${batch_list[@]}; do
         grep -rin "imc/cas_count_write/" cpu-profiling-${net}-${batch}batch-fp32-membwd.log 2>&1 | tee cas_count_write.log
         grep -rin "forward:" cpu-${net}-${batch}batch-fp32.log 2>&1 | tee time.log
         sed -i "s/input/data/" time.log
+        grep -rin "Average Forward pass" cpu-mobilenet-1batch-fp32.log 2>&1 | tee forward.log
         python2 extract_layer_time.py ${net}_float16_dense_1batch-online.prototxt time.log ${batch}
         python excel_io.py
     done

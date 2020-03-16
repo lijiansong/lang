@@ -80,6 +80,7 @@ def extract_layer_shape(net_file_path):
 
 def extract_layer_time(layer_time_file_path, layer_info_dict, layer_shape_dict):
     file_reader = open(layer_time_file_path, 'r')
+    avg_forward_reader = open('forward.log', 'r')
     cycles_reader = open('cycles.log', 'r')
     mem_read_reader = open('cas_count_read.log', 'r')
     mem_write_reader = open('cas_count_write.log', 'r')
@@ -132,6 +133,8 @@ def extract_layer_time(layer_time_file_path, layer_info_dict, layer_shape_dict):
         flops_membwd_dict['cas_count_read'] = float(mem_read_line_list[0].split()[1])
         mem_write_line_list = mem_write_reader.readlines()
         flops_membwd_dict['cas_count_write'] = float(mem_write_line_list[0].split()[1])
+        avg_forward_line_list = avg_forward_reader.readlines()
+        flops_membwd_dict['avg forward pass'] = float(avg_forward_line_list[0].split()[-2])
         print(layer_name_round_count)
         print(layer_type_round_count)
         print(layer_name_record_dict)

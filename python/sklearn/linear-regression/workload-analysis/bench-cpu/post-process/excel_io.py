@@ -154,7 +154,8 @@ def extract_into_excel(layer_info_file='layer_info.txt', layer_shape_file='layer
             len(layer_name_time_list) == len(kernel_size_list) and \
             len(kernel_size_list) == len(stride_list) and \
             len(stride_list) == len(pad_list) and \
-            len(layer_type_list) == len(layer_type_time_list), \
+            len(layer_type_list) == len(layer_type_time_list) and \
+            len(flops_membwd_type_list) == len(flops_membwd_values_list), \
             " Error! Must have same records length!"
 
     sheet1_od = collections.OrderedDict()
