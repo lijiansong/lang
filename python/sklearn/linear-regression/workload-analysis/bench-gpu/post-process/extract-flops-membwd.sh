@@ -16,7 +16,7 @@ batch_list=(
 2
 4
 8
-#16
+16
 #32
 #64
 )
@@ -29,4 +29,9 @@ for batch in ${batch_list[@]}; do
             python cc.py ${nvprof_log_file} ${net} ${batch}
         fi
     done
+done
+
+for net in ${net_list[@]}; do
+    echo ${net}
+    ls nvprof-${net}*.xlsx | wc -l
 done
