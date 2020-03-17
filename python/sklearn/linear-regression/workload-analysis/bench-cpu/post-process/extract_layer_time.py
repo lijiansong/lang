@@ -82,6 +82,7 @@ def extract_layer_time(layer_time_file_path, layer_info_dict, layer_shape_dict):
     file_reader = open(layer_time_file_path, 'r')
     avg_forward_reader = open('forward.log', 'r')
     cycles_reader = open('cycles.log', 'r')
+    profiling_seconds_reader = open('seconds.log', 'r')
     mem_read_reader = open('cas_count_read.log', 'r')
     mem_write_reader = open('cas_count_write.log', 'r')
     prefix = layer_info_dict['name']
@@ -129,6 +130,8 @@ def extract_layer_time(layer_time_file_path, layer_info_dict, layer_shape_dict):
                 del layer_type_record_dict[k]
         cycles_line_list = cycles_reader.readlines()
         flops_membwd_dict['cycles'] = int(cycles_line_list[0].split()[1])
+        seconds_line_list = profiling_seconds_reader.readlines()
+        flops_membwd_dict['profiling_seconds'] = float(seconds_line_list[0].split()[1])
         mem_read_line_list = mem_read_reader.readlines()
         flops_membwd_dict['cas_count_read'] = float(mem_read_line_list[0].split()[1])
         mem_write_line_list = mem_write_reader.readlines()
