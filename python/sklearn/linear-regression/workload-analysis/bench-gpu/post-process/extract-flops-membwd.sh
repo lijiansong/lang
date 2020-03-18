@@ -1,6 +1,6 @@
 #!/bin/bash
-#python cc.py gpu-nvprof-mobilenet-1batch-fp32.log mobilenet 1
-#python cc.py gpu-nvprof-ssd_mobilenetv1-1batch-fp32.log ssd_mobilenetv1 1
+#python cc.py gpu-nvprof-mobilenet-1batch-fp32.log gpu-nvprof-mem-transactions-mobilenet-1batch-fp32.log mobilenet 1
+#python cc.py gpu-nvprof-ssd_mobilenetv1-1batch-fp32.log gpu-nvprof-mem-transactions-ssd_mobilenetv1-1batch-fp32.log ssd_mobilenetv1 1
 
 net_list=(
 mobilenet
@@ -25,8 +25,9 @@ for batch in ${batch_list[@]}; do
     for net in ${net_list[@]}; do
         echo "${batch} ${net}"
         nvprof_log_file=gpu-nvprof-${net}-${batch}batch-fp32.log
+        mem_tran_log_file=gpu-nvprof-mem-transactions-${net}-${batch}batch-fp32.log
         if [ -f ${nvprof_log_file} ]; then
-            python cc.py ${nvprof_log_file} ${net} ${batch}
+            python cc.py ${nvprof_log_file} ${mem_tran_log_file} ${net} ${batch}
         fi
     done
 done
