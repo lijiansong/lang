@@ -6,9 +6,9 @@
 
 net_list=(
 mobilenet
-#squeezenet
-#densenet121
-#resnet50
+squeezenet
+densenet121
+resnet50
 #ssd_mobilenetv1
 #ssd_vgg16
 )
