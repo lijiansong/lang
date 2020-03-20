@@ -88,9 +88,21 @@ def draw_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
     y1 = peak_flops
     max_op_intensity, min_flops = find_boundard_pairs(gflops_intensity_dict)
     print('max intensity:', max_op_intensity, 'min flops:', min_flops)
-    ax.hlines(y=y1, xmin=x1,
-        xmax=max_op_intensity, linewidth=1.5, color='red')
-    x2 = min_flops / peak_membdw
+    if max_op_intensity < x1:
+        '''
+        for this case:   -----
+                             /
+                            /*
+                           /*
+                          /* x
+                         / x
+        '''
+        ax.hlines(y=y1, xmin=x1,
+                xmax=x1+5, linewidth=1.5, color='red')
+    else:
+        ax.hlines(y=y1, xmin=x1,
+                xmax=max_op_intensity+10, linewidth=1.5, color='red')
+    x2 = min_flops/ peak_membdw
     y2 = peak_membdw * x2
     if x2 > x1:
         '''
@@ -99,13 +111,14 @@ def draw_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
                          \  x *
                           \ * x
         '''
-        x2 = 0.1
-        y2 = peak_membdw*x2
-    ax.plot([x1, x2], [y1, y2], linewidth=1.5, color='red')
-    #ax.plot([0, x1], [0, y1], linewidth=1.5, color='red')
+        x2 = peak_flops / peak_membdw - 0.1
+        y2 = (peak_flops / peak_membdw)*x2
+    print('x1:', x1, ' y1:', y1, ' x2:', x2, ' y2:', y2)
+    #ax.plot([x1, x2], [y1, y2], linewidth=1.5, color='red')
+    ax.plot([0.1, x1], [peak_membdw*0.1, y1], linewidth=1.5, color='red')
 
-    #ax.set_yscale('log')
-    #ax.set_xscale('log')
+    ax.set_yscale('log')
+    ax.set_xscale('log')
     #plt.xscale('log', basex=2)
     #plt.yscale('log', basey=2)
     ax.set_ylabel('GFLOps/sec', fontsize=10)
@@ -119,8 +132,13 @@ def draw_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
     plt.show()
 
 if __name__ == '__main__':
-    data = get_data('data.txt')
-    # 96.8 GFlOPS, 59 GB/s
-    peak_flops = 96.8
-    peak_mem_bandwidth = 59
-    draw_roofline(data, peak_flops, peak_mem_bandwidth)
+    # Titan Xp 12.15 TFLOPS, 547.7 GB/s
+    # Tesla K40m 5.046 TFLOPS, 288.4 GB/s
+    titan_data = get_data('titan_xp_data_throughput.txt')
+    titan_peak_flops = 12.15*1000
+    titan_peak_mem_bandwidth = 547.7
+    draw_roofline(titan_data, titan_peak_flops, titan_peak_mem_bandwidth)
+    k40m_data = get_data('tesla_k40m_data_throughput.txt')
+    k40m_peak_flops = 5.046*1000
+    k40m_peak_mem_bandwidth = 288.4
+    draw_roofline(k40m_data, titan_peak_flops, titan_peak_mem_bandwidth)
