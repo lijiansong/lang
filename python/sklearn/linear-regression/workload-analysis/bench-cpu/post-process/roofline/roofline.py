@@ -90,8 +90,8 @@ def draw_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
     print('max intensity:', max_op_intensity, 'min flops:', min_flops)
     ax.hlines(y=y1, xmin=x1,
         xmax=max_op_intensity, linewidth=1.5, color='red')
-    x2 = min_flops/(peak_flops / peak_membdw)
-    y2 = (peak_flops / peak_membdw)*x2
+    x2 = min_flops / peak_membdw
+    y2 = peak_membdw * x2
     if x2 > x1:
         '''
         for this case:  -------
@@ -99,12 +99,13 @@ def draw_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
                          \  x *
                           \ * x
         '''
-        x2 = peak_flops / peak_membdw - 1
-        y2 = (peak_flops / peak_membdw)*x2
+        x2 = 0.1
+        y2 = peak_membdw*x2
     ax.plot([x1, x2], [y1, y2], linewidth=1.5, color='red')
+    #ax.plot([0, x1], [0, y1], linewidth=1.5, color='red')
 
-    ax.set_yscale('log')
-    ax.set_xscale('log')
+    #ax.set_yscale('log')
+    #ax.set_xscale('log')
     #plt.xscale('log', basex=2)
     #plt.yscale('log', basey=2)
     ax.set_ylabel('GFLOps/sec', fontsize=10)
