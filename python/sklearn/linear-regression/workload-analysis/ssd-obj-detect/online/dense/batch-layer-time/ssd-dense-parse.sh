@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 #grep -rin "hardware time:" mlu100-ssd_mobilenetv1-1batch-fp16.log 2>&1 | tee time.log
 #sed -i "s/layer input/layer data/" time.log
 #python2 extract_ssd_dense_layer_time.py ../ssd_mobilenetv1_float16_dense_1batch-online.prototxt time.log ssd_mobilenetv1 1

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #grep -rin "time:" mlu100-mobilenet-1batch-fp16.log 2>&1 | tee time.log
 #python2 extract_dense_layer_time.py ../mobilenet_float16_dense_1batch-online.prototxt time.log mobilenet 1
 #python excel_io.py
