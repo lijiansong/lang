@@ -181,7 +181,7 @@ def draw_op_roofline(op_data_list, peak_flops, peak_membdw):
         elif op_type == 'Softmax':
             ax.plot(intensity, flops, '+',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='+')
-        elif op_type == 'Dropout':
+        elif op_type == 'LRN':
             ax.plot(intensity, flops, '^',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='^')
 
@@ -211,10 +211,12 @@ def draw_op_roofline(op_data_list, peak_flops, peak_membdw):
     plt.show()
 
 if __name__ == '__main__':
-    # Intel(R) Xeon(R) CPU E5-2630 v3 @ 2.40GHz: 500 GFlOPS, 59 GB/s
-    cpu_model_data = extract_model_data('cpu_model_throughput.txt')
-    cpu_peak_flops = 500
-    cpu_peak_mem_bandwidth = 59
-    draw_model_roofline(cpu_model_data, cpu_peak_flops, cpu_peak_mem_bandwidth)
-    cpu_op_data = extract_op_data('cpu_op_throughput.txt')
-    draw_op_roofline(cpu_op_data, cpu_peak_flops, cpu_peak_mem_bandwidth)
+    # MLU100 specs:
+    # dense-fp16 16 TFLOPS, sparse-fp16 64 TFLOPS, dense-int8 32 TOPS, sparse-int8 128 TOPS
+    # memory bandwidth: 102.4 GB/s
+    mlu100_model_data = extract_model_data('mlu100_model_throughput.txt')
+    mlu100_peak_flops = 16*1000
+    mlu100_peak_mem_bandwidth = 102.4
+    draw_model_roofline(mlu100_model_data, mlu100_peak_flops, mlu100_peak_mem_bandwidth)
+    mlu100_op_data = extract_op_data('mlu100_op_throughput.txt')
+    draw_op_roofline(mlu100_op_data, mlu100_peak_flops, mlu100_peak_mem_bandwidth)
