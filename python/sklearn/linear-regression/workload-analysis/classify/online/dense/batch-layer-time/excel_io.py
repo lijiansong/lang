@@ -16,7 +16,7 @@ def unpack_layer_tops_product(layer_top):
         product *= int(i)
     return product
 
-def calculate_mlu_ops_byte(layer_name, net_shape_dict, debug=False):
+def calculate_mlu_ops_byte(layer_name, net_shape_dict, debug=True):
     flops = 0
     mem_bytes = 0
     if debug:
@@ -130,6 +130,9 @@ def calculate_mlu_ops_byte(layer_name, net_shape_dict, debug=False):
         elif v['type'] == 'InnerProduct':
             # ops = out_h*outw*(2*in_c*k_s*k_s)*out_c*out_n
             # bytes = (k_s*k_s*in_c*out_c+out_h*out_w*out_c)*in_n*2
+            if debug:
+                print('bottoms: ', v['bottoms'])
+                print('tops: ', v['tops'])
             in_n, in_c, in_h, in_w = v['bottoms'][0]
             #out_n, out_c, out_h, out_w = v['tops'][0]
             if len(v['tops'][0]) == 4:
@@ -151,7 +154,6 @@ def calculate_mlu_ops_byte(layer_name, net_shape_dict, debug=False):
             else:
                 k_s = 1
             in_n, in_c, in_h, in_w = int(in_n), int(in_c), int(in_h), int(in_w)
-            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
             flops = out_h * out_w * (2 * in_c * k_s * k_s) * out_c * out_n
             mem_bytes = (k_s * k_s * in_c * out_c + out_h * out_w * out_c) * in_n * 2
             if debug:

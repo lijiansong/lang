@@ -207,8 +207,8 @@ if __name__ == '__main__':
     #net_file = 'mobilenet-sparse-fp16/mobilenet_float16_dense_1batch-0.10.prototxt.sparse'
     #net_file = 'mobilenet_float16_dense_1batch-online.prototxt'
     #net_file = 'squeezenet_float16_dense_1batch-online.prototxt'
-    #net_file = 'resnet50_float16_dense_1batch-online.prototxt'
-    net_file = '../ssd_mobilenetv1_float16_dense_1batch-online.prototxt'
+    net_file = '../resnet50_float16_dense_1batch-online.prototxt'
+    #net_file = '../ssd_mobilenetv1_float16_dense_1batch-online.prototxt'
     weight_file = '/home/Cambricon-Test/Cambricon-MLU100/models/caffe/mobilenet/mobilenet_float16_dense.caffemodel'
     #extract_layer_info(net_file)
     net_shape_dict = get_layer_shape(net_file, weight_file)
