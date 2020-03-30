@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/capture-by-reference-asm.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="none">
+<meta name="settings" content="number_lines,use_css,pre_wrap,no_foldcolumn,expand_tabs,line_ids,prevent_copy=">
+<meta name="colorscheme" content="desert">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 1em; }
+.LineNr { color: #804000; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+/* function to open any folds containing a jumped-to line before jumping to it */
+function JumpToLine()
+{
+  var lineNum;
+  lineNum = window.location.hash;
+  lineNum = lineNum.substr(1); /* strip off '#' */
+
+  if (lineNum.indexOf('L') == -1) {
+    lineNum = 'L'+lineNum;
+  }
+  lineElem = document.getElementById(lineNum);
+  /* Always jump to new location even if the line was hidden inside a fold, or
+   * we corrected the raw number to a line ID.
+   */
+  if (lineElem) {
+    lineElem.scrollIntoView(true);
+  }
+  return true;
+}
+if ('onhashchange' in window) {
+  window.onhashchange = JumpToLine;
+}
+
+-->
+</script>
+</head>
+<body onload='JumpToLine();'>
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr">  1 </span>
+<span id="L2" class="LineNr">  2 </span>capture-by-reference-g++:     file format elf64-x86-64
+<span id="L3" class="LineNr">  3 </span>
+<span id="L4" class="LineNr">  4 </span>
+<span id="L5" class="LineNr">  5 </span>Disassembly of section .init:
+<span id="L6" class="LineNr">  6 </span>
+<span id="L7" class="LineNr">  7 </span>00000000004003f0 &lt;_init&gt;:
+<span id="L8" class="LineNr">  8 </span>  4003f0:   48 83 ec 08             sub    rsp,0x8
+<span id="L9" class="LineNr">  9 </span>  4003f4:   48 8b 05 fd 0b 20 00    mov    rax,QWORD PTR [rip+0x200bfd]        # 600ff8 &lt;_DYNAMIC+0x1d0&gt;
+<span id="L10" class="LineNr"> 10 </span>  4003fb:   48 85 c0                test   rax,rax
+<span id="L11" class="LineNr"> 11 </span>  4003fe:   74 05                   je     400405 &lt;_init+0x15&gt;
+<span id="L12" class="LineNr"> 12 </span>  400400:   e8 3b 00 00 00          call   400440 &lt;__libc_start_main@plt+0x10&gt;
+<span id="L13" class="LineNr"> 13 </span>  400405:   48 83 c4 08             add    rsp,0x8
+<span id="L14" class="LineNr"> 14 </span>  400409:   c3                      ret
+<span id="L15" class="LineNr"> 15 </span>
+<span id="L16" class="LineNr"> 16 </span>Disassembly of section .plt:
+<span id="L17" class="LineNr"> 17 </span>
+<span id="L18" class="LineNr"> 18 </span>0000000000400410 &lt;__stack_chk_fail@plt-0x10&gt;:
+<span id="L19" class="LineNr"> 19 </span>  400410:   ff 35 f2 0b 20 00       push   QWORD PTR [rip+0x200bf2]        # 601008 &lt;_GLOBAL_OFFSET_TABLE_+0x8&gt;
+<span id="L20" class="LineNr"> 20 </span>  400416:   ff 25 f4 0b 20 00       jmp    QWORD PTR [rip+0x200bf4]        # 601010 &lt;_GLOBAL_OFFSET_TABLE_+0x10&gt;
+<span id="L21" class="LineNr"> 21 </span>  40041c:   0f 1f 40 00             nop    DWORD PTR [rax+0x0]
+<span id="L22" class="LineNr"> 22 </span>
+<span id="L23" class="LineNr"> 23 </span>0000000000400420 &lt;__stack_chk_fail@plt&gt;:
+<span id="L24" class="LineNr"> 24 </span>  400420:   ff 25 f2 0b 20 00       jmp    QWORD PTR [rip+0x200bf2]        # 601018 &lt;_GLOBAL_OFFSET_TABLE_+0x18&gt;
+<span id="L25" class="LineNr"> 25 </span>  400426:   68 00 00 00 00          push   0x0
+<span id="L26" class="LineNr"> 26 </span>  40042b:   e9 e0 ff ff ff          jmp    400410 &lt;_init+0x20&gt;
+<span id="L27" class="LineNr"> 27 </span>
+<span id="L28" class="LineNr"> 28 </span>0000000000400430 &lt;__libc_start_main@plt&gt;:
+<span id="L29" class="LineNr"> 29 </span>  400430:   ff 25 ea 0b 20 00       jmp    QWORD PTR [rip+0x200bea]        # 601020 &lt;_GLOBAL_OFFSET_TABLE_+0x20&gt;
+<span id="L30" class="LineNr"> 30 </span>  400436:   68 01 00 00 00          push   0x1
+<span id="L31" class="LineNr"> 31 </span>  40043b:   e9 d0 ff ff ff          jmp    400410 &lt;_init+0x20&gt;
+<span id="L32" class="LineNr"> 32 </span>
+<span id="L33" class="LineNr"> 33 </span>Disassembly of section .plt.got:
+<span id="L34" class="LineNr"> 34 </span>
+<span id="L35" class="LineNr"> 35 </span>0000000000400440 &lt;.plt.got&gt;:
+<span id="L36" class="LineNr"> 36 </span>  400440:   ff 25 b2 0b 20 00       jmp    QWORD PTR [rip+0x200bb2]        # 600ff8 &lt;_DYNAMIC+0x1d0&gt;
+<span id="L37" class="LineNr"> 37 </span>  400446:   66 90                   xchg   ax,ax
+<span id="L38" class="LineNr"> 38 </span>
+<span id="L39" class="LineNr"> 39 </span>Disassembly of section .text:
+<span id="L40" class="LineNr"> 40 </span>
+<span id="L41" class="LineNr"> 41 </span>0000000000400450 &lt;_start&gt;:
+<span id="L42" class="LineNr"> 42 </span>  400450:   31 ed                   xor    ebp,ebp
+<span id="L43" class="LineNr"> 43 </span>  400452:   49 89 d1                mov    r9,rdx
+<span id="L44" class="LineNr"> 44 </span>  400455:   5e                      pop    rsi
+<span id="L45" class="LineNr"> 45 </span>  400456:   48 89 e2                mov    rdx,rsp
+<span id="L46" class="LineNr"> 46 </span>  400459:   48 83 e4 f0             and    rsp,0xfffffffffffffff0
+<span id="L47" class="LineNr"> 47 </span>  40045d:   50                      push   rax
+<span id="L48" class="LineNr"> 48 </span>  40045e:   54                      push   rsp
+<span id="L49" class="LineNr"> 49 </span>  40045f:   49 c7 c0 90 06 40 00    mov    r8,0x400690
+<span id="L50" class="LineNr"> 50 </span>  400466:   48 c7 c1 20 06 40 00    mov    rcx,0x400620
+<span id="L51" class="LineNr"> 51 </span>  40046d:   48 c7 c7 66 05 40 00    mov    rdi,0x400566
+<span id="L52" class="LineNr"> 52 </span>  400474:   e8 b7 ff ff ff          call   400430 &lt;__libc_start_main@plt&gt;
+<span id="L53" class="LineNr"> 53 </span>  400479:   f4                      hlt
+<span id="L54" class="LineNr"> 54 </span>  40047a:   66 0f 1f 44 00 00       nop    WORD PTR [rax+rax*1+0x0]
+<span id="L55" class="LineNr"> 55 </span>
+<span id="L56" class="LineNr"> 56 </span>0000000000400480 &lt;deregister_tm_clones&gt;:
+<span id="L57" class="LineNr"> 57 </span>  400480:   b8 3f 10 60 00          mov    eax,0x60103f
+<span id="L58" class="LineNr"> 58 </span>  400485:   55                      push   rbp
+<span id="L59" class="LineNr"> 59 </span>  400486:   48 2d 38 10 60 00       sub    rax,0x601038
+<span id="L60" class="LineNr"> 60 </span>  40048c:   48 83 f8 0e             cmp    rax,0xe
+<span id="L61" class="LineNr"> 61 </span>  400490:   48 89 e5                mov    rbp,rsp
+<span id="L62" class="LineNr"> 62 </span>  400493:   76 1b                   jbe    4004b0 &lt;deregister_tm_clones+0x30&gt;
+<span id="L63" class="LineNr"> 63 </span>  400495:   b8 00 00 00 00          mov    eax,0x0
+<span id="L64" class="LineNr"> 64 </span>  40049a:   48 85 c0                test   rax,rax
+<span id="L65" class="LineNr"> 65 </span>  40049d:   74 11                   je     4004b0 &lt;deregister_tm_clones+0x30&gt;
+<span id="L66" class="LineNr"> 66 </span>  40049f:   5d                      pop    rbp
+<span id="L67" class="LineNr"> 67 </span>  4004a0:   bf 38 10 60 00          mov    edi,0x601038
+<span id="L68" class="LineNr"> 68 </span>  4004a5:   ff e0                   jmp    rax
+<span id="L69" class="LineNr"> 69 </span>  4004a7:   66 0f 1f 84 00 00 00    nop    WORD PTR [rax+rax*1+0x0]
+<span id="L70" class="LineNr"> 70 </span>  4004ae:   00 00
+<span id="L71" class="LineNr"> 71 </span>  4004b0:   5d                      pop    rbp
+<span id="L72" class="LineNr"> 72 </span>  4004b1:   c3                      ret
+<span id="L73" class="LineNr"> 73 </span>  4004b2:   0f 1f 40 00             nop    DWORD PTR [rax+0x0]
+<span id="L74" class="LineNr"> 74 </span>  4004b6:   66 2e 0f 1f 84 00 00    nop    WORD PTR cs:[rax+rax*1+0x0]
+<span id="L75" class="LineNr"> 75 </span>  4004bd:   00 00 00
+<span id="L76" class="LineNr"> 76 </span>
+<span id="L77" class="LineNr"> 77 </span>00000000004004c0 &lt;register_tm_clones&gt;:
+<span id="L78" class="LineNr"> 78 </span>  4004c0:   be 38 10 60 00          mov    esi,0x601038
+<span id="L79" class="LineNr"> 79 </span>  4004c5:   55                      push   rbp
+<span id="L80" class="LineNr"> 80 </span>  4004c6:   48 81 ee 38 10 60 00    sub    rsi,0x601038
+<span id="L81" class="LineNr"> 81 </span>  4004cd:   48 c1 fe 03             sar    rsi,0x3
+<span id="L82" class="LineNr"> 82 </span>  4004d1:   48 89 e5                mov    rbp,rsp
+<span id="L83" class="LineNr"> 83 </span>  4004d4:   48 89 f0                mov    rax,rsi
+<span id="L84" class="LineNr"> 84 </span>  4004d7:   48 c1 e8 3f             shr    rax,0x3f
+<span id="L85" class="LineNr"> 85 </span>  4004db:   48 01 c6                add    rsi,rax
+<span id="L86" class="LineNr"> 86 </span>  4004de:   48 d1 fe                sar    rsi,1
+<span id="L87" class="LineNr"> 87 </span>  4004e1:   74 15                   je     4004f8 &lt;register_tm_clones+0x38&gt;
+<span id="L88" class="LineNr"> 88 </span>  4004e3:   b8 00 00 00 00          mov    eax,0x0
+<span id="L89" class="LineNr"> 89 </span>  4004e8:   48 85 c0                test   rax,rax
+<span id="L90" class="LineNr"> 90 </span>  4004eb:   74 0b                   je     4004f8 &lt;register_tm_clones+0x38&gt;
+<span id="L91" class="LineNr"> 91 </span>  4004ed:   5d                      pop    rbp
+<span id="L92" class="LineNr"> 92 </span>  4004ee:   bf 38 10 60 00          mov    edi,0x601038
+<span id="L93" class="LineNr"> 93 </span>  4004f3:   ff e0                   jmp    rax
+<span id="L94" class="LineNr"> 94 </span>  4004f5:   0f 1f 00                nop    DWORD PTR [rax]
+<span id="L95" class="LineNr"> 95 </span>  4004f8:   5d                      pop    rbp
+<span id="L96" class="LineNr"> 96 </span>  4004f9:   c3                      ret
+<span id="L97" class="LineNr"> 97 </span>  4004fa:   66 0f 1f 44 00 00       nop    WORD PTR [rax+rax*1+0x0]
+<span id="L98" class="LineNr"> 98 </span>
+<span id="L99" class="LineNr"> 99 </span>0000000000400500 &lt;__do_global_dtors_aux&gt;:
+<span id="L100" class="LineNr">100 </span>  400500:   80 3d 31 0b 20 00 00    cmp    BYTE PTR [rip+0x200b31],0x0        # 601038 &lt;__TMC_END__&gt;
+<span id="L101" class="LineNr">101 </span>  400507:   75 11                   jne    40051a &lt;__do_global_dtors_aux+0x1a&gt;
+<span id="L102" class="LineNr">102 </span>  400509:   55                      push   rbp
+<span id="L103" class="LineNr">103 </span>  40050a:   48 89 e5                mov    rbp,rsp
+<span id="L104" class="LineNr">104 </span>  40050d:   e8 6e ff ff ff          call   400480 &lt;deregister_tm_clones&gt;
+<span id="L105" class="LineNr">105 </span>  400512:   5d                      pop    rbp
+<span id="L106" class="LineNr">106 </span>  400513:   c6 05 1e 0b 20 00 01    mov    BYTE PTR [rip+0x200b1e],0x1        # 601038 &lt;__TMC_END__&gt;
+<span id="L107" class="LineNr">107 </span>  40051a:   f3 c3                   repz ret
+<span id="L108" class="LineNr">108 </span>  40051c:   0f 1f 40 00             nop    DWORD PTR [rax+0x0]
+<span id="L109" class="LineNr">109 </span>
+<span id="L110" class="LineNr">110 </span>0000000000400520 &lt;frame_dummy&gt;:
+<span id="L111" class="LineNr">111 </span>  400520:   bf 20 0e 60 00          mov    edi,0x600e20
+<span id="L112" class="LineNr">112 </span>  400525:   48 83 3f 00             cmp    QWORD PTR [rdi],0x0
+<span id="L113" class="LineNr">113 </span>  400529:   75 05                   jne    400530 &lt;frame_dummy+0x10&gt;
+<span id="L114" class="LineNr">114 </span>  40052b:   eb 93                   jmp    4004c0 &lt;register_tm_clones&gt;
+<span id="L115" class="LineNr">115 </span>  40052d:   0f 1f 00                nop    DWORD PTR [rax]
+<span id="L116" class="LineNr">116 </span>  400530:   b8 00 00 00 00          mov    eax,0x0
+<span id="L117" class="LineNr">117 </span>  400535:   48 85 c0                test   rax,rax
+<span id="L118" class="LineNr">118 </span>  400538:   74 f1                   je     40052b &lt;frame_dummy+0xb&gt;
+<span id="L119" class="LineNr">119 </span>  40053a:   55                      push   rbp
+<span id="L120" class="LineNr">120 </span>  40053b:   48 89 e5                mov    rbp,rsp
+<span id="L121" class="LineNr">121 </span>  40053e:   ff d0                   call   rax
+<span id="L122" class="LineNr">122 </span>  400540:   5d                      pop    rbp
+<span id="L123" class="LineNr">123 </span>  400541:   e9 7a ff ff ff          jmp    4004c0 &lt;register_tm_clones&gt;
+<span id="L124" class="LineNr">124 </span>
+<span id="L125" class="LineNr">125 </span>0000000000400546 &lt;main::{lambda(int)#1}::operator()(int) const&gt;:
+<span id="L126" class="LineNr">126 </span>};
+<span id="L127" class="LineNr">127 </span>
+<span id="L128" class="LineNr">128 </span>int main() {
+<span id="L129" class="LineNr">129 </span>  int x = 3;
+<span id="L130" class="LineNr">130 </span>
+<span id="L131" class="LineNr">131 </span>  auto lambda = [&amp;](int a) { return a + x++; };
+<span id="L132" class="LineNr">132 </span>  400546:   55                      push   rbp
+<span id="L133" class="LineNr">133 </span>  400547:   48 89 e5                mov    rbp,rsp
+<span id="L134" class="LineNr">134 </span>  40054a:   48 89 7d f8             mov    QWORD PTR [rbp-0x8],rdi
+<span id="L135" class="LineNr">135 </span>  40054e:   89 75 f4                mov    DWORD PTR [rbp-0xc],esi
+<span id="L136" class="LineNr">136 </span>  400551:   48 8b 45 f8             mov    rax,QWORD PTR [rbp-0x8]
+<span id="L137" class="LineNr">137 </span>  400555:   48 8b 00                mov    rax,QWORD PTR [rax]
+<span id="L138" class="LineNr">138 </span>  400558:   8b 10                   mov    edx,DWORD PTR [rax]
+<span id="L139" class="LineNr">139 </span>  40055a:   8d 4a 01                lea    ecx,[rdx+0x1]
+<span id="L140" class="LineNr">140 </span>  40055d:   89 08                   mov    DWORD PTR [rax],ecx
+<span id="L141" class="LineNr">141 </span>  40055f:   8b 45 f4                mov    eax,DWORD PTR [rbp-0xc]
+<span id="L142" class="LineNr">142 </span>  400562:   01 d0                   add    eax,edx
+<span id="L143" class="LineNr">143 </span>  400564:   5d                      pop    rbp
+<span id="L144" class="LineNr">144 </span>  400565:   c3                      ret
+<span id="L145" class="LineNr">145 </span>
+<span id="L146" class="LineNr">146 </span>0000000000400566 &lt;main&gt;:
+<span id="L147" class="LineNr">147 </span>
+<span id="L148" class="LineNr">148 </span>private:
+<span id="L149" class="LineNr">149 </span>  int &amp;m_x;
+<span id="L150" class="LineNr">150 </span>};
+<span id="L151" class="LineNr">151 </span>
+<span id="L152" class="LineNr">152 </span>int main() {
+<span id="L153" class="LineNr">153 </span>  400566:   55                      push   rbp
+<span id="L154" class="LineNr">154 </span>  400567:   48 89 e5                mov    rbp,rsp
+<span id="L155" class="LineNr">155 </span>  40056a:   48 83 ec 30             sub    rsp,0x30
+<span id="L156" class="LineNr">156 </span>  40056e:   64 48 8b 04 25 28 00    mov    rax,QWORD PTR fs:0x28
+<span id="L157" class="LineNr">157 </span>  400575:   00 00
+<span id="L158" class="LineNr">158 </span>  400577:   48 89 45 f8             mov    QWORD PTR [rbp-0x8],rax
+<span id="L159" class="LineNr">159 </span>  40057b:   31 c0                   xor    eax,eax
+<span id="L160" class="LineNr">160 </span>  int x = 3;
+<span id="L161" class="LineNr">161 </span>  40057d:   c7 45 d4 03 00 00 00    mov    DWORD PTR [rbp-0x2c],0x3
+<span id="L162" class="LineNr">162 </span>
+<span id="L163" class="LineNr">163 </span>  auto lambda = [&amp;](int a) { return a + x++; };
+<span id="L164" class="LineNr">164 </span>  400584:   48 8d 45 d4             lea    rax,[rbp-0x2c]
+<span id="L165" class="LineNr">165 </span>  400588:   48 89 45 e0             mov    QWORD PTR [rbp-0x20],rax
+<span id="L166" class="LineNr">166 </span>
+<span id="L167" class="LineNr">167 </span>  Functor functor(x);
+<span id="L168" class="LineNr">168 </span>  40058c:   48 8d 55 d4             lea    rdx,[rbp-0x2c]
+<span id="L169" class="LineNr">169 </span>  400590:   48 8d 45 f0             lea    rax,[rbp-0x10]
+<span id="L170" class="LineNr">170 </span>  400594:   48 89 d6                mov    rsi,rdx
+<span id="L171" class="LineNr">171 </span>  400597:   48 89 c7                mov    rdi,rax
+<span id="L172" class="LineNr">172 </span>  40059a:   e8 43 00 00 00          call   4005e2 &lt;Functor::Functor(int&amp;)&gt;
+<span id="L173" class="LineNr">173 </span>
+<span id="L174" class="LineNr">174 </span>  volatile int y1 = functor(5);
+<span id="L175" class="LineNr">175 </span>  40059f:   48 8d 45 f0             lea    rax,[rbp-0x10]
+<span id="L176" class="LineNr">176 </span>  4005a3:   be 05 00 00 00          mov    esi,0x5
+<span id="L177" class="LineNr">177 </span>  4005a8:   48 89 c7                mov    rdi,rax
+<span id="L178" class="LineNr">178 </span>  4005ab:   e8 4c 00 00 00          call   4005fc &lt;Functor::operator()(int)&gt;
+<span id="L179" class="LineNr">179 </span>  4005b0:   89 45 d8                mov    DWORD PTR [rbp-0x28],eax
+<span id="L180" class="LineNr">180 </span>  volatile int y2 = lambda(5);
+<span id="L181" class="LineNr">181 </span>  4005b3:   48 8d 45 e0             lea    rax,[rbp-0x20]
+<span id="L182" class="LineNr">182 </span>  4005b7:   be 05 00 00 00          mov    esi,0x5
+<span id="L183" class="LineNr">183 </span>  4005bc:   48 89 c7                mov    rdi,rax
+<span id="L184" class="LineNr">184 </span>  4005bf:   e8 82 ff ff ff          call   400546 &lt;main::{lambda(int)#1}::operator()(int) const&gt;
+<span id="L185" class="LineNr">185 </span>  4005c4:   89 45 dc                mov    DWORD PTR [rbp-0x24],eax
+<span id="L186" class="LineNr">186 </span>
+<span id="L187" class="LineNr">187 </span>  return 0;
+<span id="L188" class="LineNr">188 </span>  4005c7:   b8 00 00 00 00          mov    eax,0x0
+<span id="L189" class="LineNr">189 </span>}
+<span id="L190" class="LineNr">190 </span>  4005cc:   48 8b 4d f8             mov    rcx,QWORD PTR [rbp-0x8]
+<span id="L191" class="LineNr">191 </span>  4005d0:   64 48 33 0c 25 28 00    xor    rcx,QWORD PTR fs:0x28
+<span id="L192" class="LineNr">192 </span>  4005d7:   00 00
+<span id="L193" class="LineNr">193 </span>  4005d9:   74 05                   je     4005e0 &lt;main+0x7a&gt;
+<span id="L194" class="LineNr">194 </span>  4005db:   e8 40 fe ff ff          call   400420 &lt;__stack_chk_fail@plt&gt;
+<span id="L195" class="LineNr">195 </span>  4005e0:   c9                      leave
+<span id="L196" class="LineNr">196 </span>  4005e1:   c3                      ret
+<span id="L197" class="LineNr">197 </span>
+<span id="L198" class="LineNr">198 </span>00000000004005e2 &lt;Functor::Functor(int&amp;)&gt;:
+<span id="L199" class="LineNr">199 </span>class Functor {
+<span id="L200" class="LineNr">200 </span>public:
+<span id="L201" class="LineNr">201 </span>  Functor(int &amp;x) : m_x(x) {}
+<span id="L202" class="LineNr">202 </span>  4005e2:   55                      push   rbp
+<span id="L203" class="LineNr">203 </span>  4005e3:   48 89 e5                mov    rbp,rsp
+<span id="L204" class="LineNr">204 </span>  4005e6:   48 89 7d f8             mov    QWORD PTR [rbp-0x8],rdi
+<span id="L205" class="LineNr">205 </span>  4005ea:   48 89 75 f0             mov    QWORD PTR [rbp-0x10],rsi
+<span id="L206" class="LineNr">206 </span>  4005ee:   48 8b 45 f8             mov    rax,QWORD PTR [rbp-0x8]
+<span id="L207" class="LineNr">207 </span>  4005f2:   48 8b 55 f0             mov    rdx,QWORD PTR [rbp-0x10]
+<span id="L208" class="LineNr">208 </span>  4005f6:   48 89 10                mov    QWORD PTR [rax],rdx
+<span id="L209" class="LineNr">209 </span>  4005f9:   90                      nop
+<span id="L210" class="LineNr">210 </span>  4005fa:   5d                      pop    rbp
+<span id="L211" class="LineNr">211 </span>  4005fb:   c3                      ret
+<span id="L212" class="LineNr">212 </span>
+<span id="L213" class="LineNr">213 </span>00000000004005fc &lt;Functor::operator()(int)&gt;:
+<span id="L214" class="LineNr">214 </span>
+<span id="L215" class="LineNr">215 </span>  int operator()(int a) { return a + m_x++; }
+<span id="L216" class="LineNr">216 </span>  4005fc:   55                      push   rbp
+<span id="L217" class="LineNr">217 </span>  4005fd:   48 89 e5                mov    rbp,rsp
+<span id="L218" class="LineNr">218 </span>  400600:   48 89 7d f8             mov    QWORD PTR [rbp-0x8],rdi
+<span id="L219" class="LineNr">219 </span>  400604:   89 75 f4                mov    DWORD PTR [rbp-0xc],esi
+<span id="L220" class="LineNr">220 </span>  400607:   48 8b 45 f8             mov    rax,QWORD PTR [rbp-0x8]
+<span id="L221" class="LineNr">221 </span>  40060b:   48 8b 00                mov    rax,QWORD PTR [rax]
+<span id="L222" class="LineNr">222 </span>  40060e:   8b 10                   mov    edx,DWORD PTR [rax]
+<span id="L223" class="LineNr">223 </span>  400610:   8d 4a 01                lea    ecx,[rdx+0x1]
+<span id="L224" class="LineNr">224 </span>  400613:   89 08                   mov    DWORD PTR [rax],ecx
+<span id="L225" class="LineNr">225 </span>  400615:   8b 45 f4                mov    eax,DWORD PTR [rbp-0xc]
+<span id="L226" class="LineNr">226 </span>  400618:   01 d0                   add    eax,edx
+<span id="L227" class="LineNr">227 </span>  40061a:   5d                      pop    rbp
+<span id="L228" class="LineNr">228 </span>  40061b:   c3                      ret
+<span id="L229" class="LineNr">229 </span>  40061c:   0f 1f 40 00             nop    DWORD PTR [rax+0x0]
+<span id="L230" class="LineNr">230 </span>
+<span id="L231" class="LineNr">231 </span>0000000000400620 &lt;__libc_csu_init&gt;:
+<span id="L232" class="LineNr">232 </span>  400620:   41 57                   push   r15
+<span id="L233" class="LineNr">233 </span>  400622:   41 56                   push   r14
+<span id="L234" class="LineNr">234 </span>  400624:   41 89 ff                mov    r15d,edi
+<span id="L235" class="LineNr">235 </span>  400627:   41 55                   push   r13
+<span id="L236" class="LineNr">236 </span>  400629:   41 54                   push   r12
+<span id="L237" class="LineNr">237 </span>  40062b:   4c 8d 25 de 07 20 00    lea    r12,[rip+0x2007de]        # 600e10 &lt;__frame_dummy_init_array_entry&gt;
+<span id="L238" class="LineNr">238 </span>  400632:   55                      push   rbp
+<span id="L239" class="LineNr">239 </span>  400633:   48 8d 2d de 07 20 00    lea    rbp,[rip+0x2007de]        # 600e18 &lt;__init_array_end&gt;
+<span id="L240" class="LineNr">240 </span>  40063a:   53                      push   rbx
+<span id="L241" class="LineNr">241 </span>  40063b:   49 89 f6                mov    r14,rsi
+<span id="L242" class="LineNr">242 </span>  40063e:   49 89 d5                mov    r13,rdx
+<span id="L243" class="LineNr">243 </span>  400641:   4c 29 e5                sub    rbp,r12
+<span id="L244" class="LineNr">244 </span>  400644:   48 83 ec 08             sub    rsp,0x8
+<span id="L245" class="LineNr">245 </span>  400648:   48 c1 fd 03             sar    rbp,0x3
+<span id="L246" class="LineNr">246 </span>  40064c:   e8 9f fd ff ff          call   4003f0 &lt;_init&gt;
+<span id="L247" class="LineNr">247 </span>  400651:   48 85 ed                test   rbp,rbp
+<span id="L248" class="LineNr">248 </span>  400654:   74 20                   je     400676 &lt;__libc_csu_init+0x56&gt;
+<span id="L249" class="LineNr">249 </span>  400656:   31 db                   xor    ebx,ebx
+<span id="L250" class="LineNr">250 </span>  400658:   0f 1f 84 00 00 00 00    nop    DWORD PTR [rax+rax*1+0x0]
+<span id="L251" class="LineNr">251 </span>  40065f:   00
+<span id="L252" class="LineNr">252 </span>  400660:   4c 89 ea                mov    rdx,r13
+<span id="L253" class="LineNr">253 </span>  400663:   4c 89 f6                mov    rsi,r14
+<span id="L254" class="LineNr">254 </span>  400666:   44 89 ff                mov    edi,r15d
+<span id="L255" class="LineNr">255 </span>  400669:   41 ff 14 dc             call   QWORD PTR [r12+rbx*8]
+<span id="L256" class="LineNr">256 </span>  40066d:   48 83 c3 01             add    rbx,0x1
+<span id="L257" class="LineNr">257 </span>  400671:   48 39 eb                cmp    rbx,rbp
+<span id="L258" class="LineNr">258 </span>  400674:   75 ea                   jne    400660 &lt;__libc_csu_init+0x40&gt;
+<span id="L259" class="LineNr">259 </span>  400676:   48 83 c4 08             add    rsp,0x8
+<span id="L260" class="LineNr">260 </span>  40067a:   5b                      pop    rbx
+<span id="L261" class="LineNr">261 </span>  40067b:   5d                      pop    rbp
+<span id="L262" class="LineNr">262 </span>  40067c:   41 5c                   pop    r12
+<span id="L263" class="LineNr">263 </span>  40067e:   41 5d                   pop    r13
+<span id="L264" class="LineNr">264 </span>  400680:   41 5e                   pop    r14
+<span id="L265" class="LineNr">265 </span>  400682:   41 5f                   pop    r15
+<span id="L266" class="LineNr">266 </span>  400684:   c3                      ret
+<span id="L267" class="LineNr">267 </span>  400685:   90                      nop
+<span id="L268" class="LineNr">268 </span>  400686:   66 2e 0f 1f 84 00 00    nop    WORD PTR cs:[rax+rax*1+0x0]
+<span id="L269" class="LineNr">269 </span>  40068d:   00 00 00
+<span id="L270" class="LineNr">270 </span>
+<span id="L271" class="LineNr">271 </span>0000000000400690 &lt;__libc_csu_fini&gt;:
+<span id="L272" class="LineNr">272 </span>  400690:   f3 c3                   repz ret
+<span id="L273" class="LineNr">273 </span>
+<span id="L274" class="LineNr">274 </span>Disassembly of section .fini:
+<span id="L275" class="LineNr">275 </span>
+<span id="L276" class="LineNr">276 </span>0000000000400694 &lt;_fini&gt;:
+<span id="L277" class="LineNr">277 </span>  400694:   48 83 ec 08             sub    rsp,0x8
+<span id="L278" class="LineNr">278 </span>  400698:   48 83 c4 08             add    rsp,0x8
+<span id="L279" class="LineNr">279 </span>  40069c:   c3                      ret
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
