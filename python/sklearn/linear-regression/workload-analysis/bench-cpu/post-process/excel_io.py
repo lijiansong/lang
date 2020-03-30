@@ -10,6 +10,177 @@ import pandas as pd
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
+def unpack_layer_tops_product(layer_top):
+    product = 1
+    for i in layer_top:
+        product *= int(i)
+    return product
+
+def calculate_mlu_ops_byte(layer_name, net_shape_dict, debug=True):
+    flops = 0
+    mem_bytes = 0
+    if debug:
+        print(net_shape_dict)
+    if layer_name in net_shape_dict:
+        v = net_shape_dict[layer_name]
+        if v['type'] == 'Convolution':
+            # ops = out_h*out_w*(2*in_c*k_s*k_s)*out_c*out_n
+            # bytes = (k_s*k_s*in_c*out_c+out_h*out_w*out_c)*out_n*2
+            in_n, in_c, in_h, in_w = v['bottoms'][0]
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            k_s = int(v['kernel_size'])
+            in_n, in_c, in_h, in_w = int(in_n), int(in_c), int(in_h), int(in_w)
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            flops = out_h * out_w * (2 * in_c * k_s * k_s) * out_c * out_n
+            mem_bytes = (k_s * k_s * in_c * out_c + out_h * out_w * out_c) * out_n * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Pooling':
+            in_n, in_c, in_h, in_w = v['bottoms'][0]
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            k_s = int(v['kernel_size'])
+            in_n, in_c, in_h, in_w = int(in_n), int(in_c), int(in_h), int(in_w)
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            if int(v['kernel_size']) == 0:
+                # global pooling
+                # ops = in_c*in_h*in_w*in_n or in_c*(in_h*in_w+1)*in_n
+                # bytes = (in_c*in_h*in_w+out_c*out_h*out_w)*out_n*2
+                flops = in_c * (in_h * in_w + 1) * in_n
+                mem_bytes = (in_c * in_h * in_w + out_c * out_h * out_w) * out_n * 4
+            else:
+                # common pooling
+                # ops = out_c*out_h*out_w*k_s*k_s*out_n
+                # bytes = out_c*out_h*out_w*(k_s*k_s+1)*out_n*2
+                flops = out_c * out_h * out_w * k_s * k_s * out_n
+                mem_bytes = out_c * out_h * out_w * (k_s * k_s + 1) * out_n * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'ReLU':
+            # ops=2*N*C*H*W
+            # bytes=2*N*C*H*W*2
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            flops = out_n * out_c * out_h * out_w
+            mem_bytes = 2 * out_n * out_c * out_w * out_w * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Scale':
+            # ops=2*N*C*H*W
+            # bytes=3*N*C*H*W*2
+            #out_n, out_c, out_h, out_w = v['tops'][0]
+            #out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            #flops = 2 * out_n * out_c * out_h * out_w
+            #mem_bytes = 3 * out_n * out_c * out_w * out_w * 2
+            product = unpack_layer_tops_product(v['tops'][0])
+            flops = 2 * product
+            mem_bytes = 3 * product * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Softmax':
+            # ops=4*N*C*H*W
+            # bytes=2*N*C*H*W*2
+            # Note: sometimes this layer only has two dimensions:
+            product = unpack_layer_tops_product(v['tops'][0])
+            flops = 4 * product
+            mem_bytes = 2 * product * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'BatchNorm':
+            # ops=8*N*C*H*W
+            # bytes=4*N*C*H*W*2
+            #out_n, out_c, out_h, out_w = v['tops'][0]
+            #out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            #flops = 8 * out_n * out_c * out_h * out_w
+            #mem_bytes = 4 * out_n * out_c * out_w * out_w * 2
+            product = unpack_layer_tops_product(v['tops'][0])
+            flops = 8 * product
+            mem_bytes = 4 * product * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Dropout':
+            # ops=3*N*C*H*W
+            # bytes=3*N*C*H*W*2
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            flops = 3 * out_n * out_c * out_h * out_w
+            mem_bytes = 3 * out_n * out_c * out_w * out_w * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Concat':
+            # ops=0
+            # bytes=2*out_n*out*c*out*h*out*w*2
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            flops = 0
+            mem_bytes = 2 * out_n * out_c * out_w * out_w * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Eltwise':
+            # ops=2*N*C*H*W
+            # bytes=3*N*C*H*W*2
+            #out_n, out_c, out_h, out_w = v['tops'][0]
+            #out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            #flops = 2 * out_n * out_c * out_h * out_w
+            #mem_bytes = 3 * out_n * out_c * out_w * out_w * 2
+            product = unpack_layer_tops_product(v['tops'][0])
+            flops = 2 * product
+            mem_bytes = 3 * product * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'InnerProduct':
+            # ops = out_h*outw*(2*in_c*k_s*k_s)*out_c*out_n
+            # bytes = (k_s*k_s*in_c*out_c+out_h*out_w*out_c)*in_n*2
+            if debug:
+                print('bottoms: ', v['bottoms'])
+                print('tops: ', v['tops'])
+            in_n, in_c, in_h, in_w = v['bottoms'][0]
+            #out_n, out_c, out_h, out_w = v['tops'][0]
+            if len(v['tops'][0]) == 4:
+                out_n, out_c, out_h, out_w = v['tops'][0]
+            elif len(v['tops'][0]) == 3:
+                out_n, out_c, out_h = v['tops'][0]
+                out_w = 1
+            elif len(v['tops'][0]) == 2:
+                out_n, out_c = v['tops'][0]
+                out_h = 1
+                out_w = 1
+            elif len(v['tops'][0]) == 1:
+                out_n = v['tops'][0]
+                out_c = 1
+                out_h = 1
+                out_w = 1
+            if 'kernel_size' in v:
+                k_s = int(v['kernel_size'])
+            else:
+                k_s = 1
+            in_n, in_c, in_h, in_w = int(in_n), int(in_c), int(in_h), int(in_w)
+            flops = out_h * out_w * (2 * in_c * k_s * k_s) * out_c * out_n
+            mem_bytes = (k_s * k_s * in_c * out_c + out_h * out_w * out_c) * in_n * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'Normalize':
+            # ops=8*N*C*H*W
+            # bytes=2*N*C*H*W*2
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            flops = 8 * out_n * out_c * out_h * out_w
+            mem_bytes = 2 * out_n * out_c * out_w * out_w * 4
+            if debug:
+                print(flops, mem_bytes)
+        elif v['type'] == 'SsdDetection':
+            # ops=4*N*C*H*W
+            # bytes=(in_0+in_1+...+in_n+out)*2
+            out_n, out_c, out_h, out_w = v['tops'][0]
+            out_n, out_c, out_h, out_w = int(out_n), int(out_c), int(out_h), int(out_w)
+            flops = 4 * out_n * out_c * out_h * out_w
+            mem_bytes = 0
+            for n, c, h, w in v['bottoms']:
+                mem_bytes +=  n * c * h * w * 2
+            mem_bytes += out_n * out_c * out_h * out_w * 4
+            if debug:
+                print(flops, mem_bytes)
+    return flops, mem_bytes
+
 def extract_into_excel(layer_info_file='layer_info.txt', layer_shape_file='layer_shape.txt', debug=False):
     layer_info_reader = open(layer_info_file, 'rb')
     layer_info = pickle.load(layer_info_reader)
@@ -158,10 +329,42 @@ def extract_into_excel(layer_info_file='layer_info.txt', layer_shape_file='layer
             len(flops_membwd_type_list) == len(flops_membwd_values_list), \
             " Error! Must have same records length!"
 
+    # calculate flops and memory accessing bytes
+    ops_list = []
+    mem_bytes_list = []
+    for layer_name in layer_name_list:
+        flops, mem_bytes = calculate_mlu_ops_byte(layer_name, layer_shape)
+        ops_list.append(flops)
+        mem_bytes_list.append(mem_bytes)
+
+    gflops_list = []
+    intensity_list = []
+    total_model_ops = 0.0
+    total_model_mem_bytes = 0.0
+    for i, exe_time in enumerate(layer_name_time_list):
+        gflops_list.append(ops_list[i] / 1e9 / (exe_time / 1e3))
+        intensity_list.append(float(ops_list[i] / mem_bytes_list[i]))
+        total_model_ops += ops_list[i]
+        total_model_mem_bytes += mem_bytes_list[i]
+
+    avg_model_intensity = float(total_model_ops / total_model_mem_bytes)
+    total_model_time = 0
+    for time in layer_type_time_list:
+        total_model_time += time
+    avg_model_gflops = total_model_ops / 1e9 / (total_model_time / 1e3)
+
+    # for sheet4 columns
+    value_list = [total_model_ops, total_model_mem_bytes, total_model_time, avg_model_gflops, avg_model_intensity]
+    name_list = ['model ops', 'model bytes', 'model time(ms)', 'model GFLOPS', 'model intensity']
+
     sheet1_od = collections.OrderedDict()
     sheet1_od['layer name'] = layer_name_list
     sheet1_od['layer type'] = layer_name_type_list
     sheet1_od['time(ms)'] = layer_name_time_list
+    sheet1_od['Ops'] = ops_list
+    sheet1_od['Bytes'] = mem_bytes_list
+    sheet1_od['GFLOPS'] = gflops_list
+    sheet1_od['Intensity'] = intensity_list
     for i in range(0, max_bottoms_length):
         sheet1_od['Input' + str(i) + ' N'] = layer_shape_list_dict['Input' + str(i) + ' N']
         sheet1_od['Input' + str(i) + ' C'] = layer_shape_list_dict['Input' + str(i) + ' C']
@@ -187,11 +390,17 @@ def extract_into_excel(layer_info_file='layer_info.txt', layer_shape_file='layer
     sheet3_od['values'] = flops_membwd_values_list
     sheet3_df = pd.DataFrame(sheet3_od)
 
+    sheet4_od = collections.OrderedDict()
+    sheet4_od['name'] = name_list
+    sheet4_od['values'] = value_list
+    sheet4_df = pd.DataFrame(sheet4_od)
+
     excel_file_name = str(net_name) + '.xlsx'
     writer = ExcelWriter(excel_file_name)
     sheet1_df.to_excel(writer, 'Sheet1', index=False)
     sheet2_df.to_excel(writer, 'Sheet2', index=False)
     sheet3_df.to_excel(writer, 'Sheet3', index=False)
+    sheet4_df.to_excel(writer, 'Sheet4', index=False)
     writer.save()
 
 if __name__ == '__main__':
