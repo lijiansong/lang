@@ -1,0 +1,120 @@
+
+no-capture-g++:	file format Mach-O 64-bit x86-64
+
+Disassembly of section __TEXT,__text:
+__text:
+100000ef0:	55 	push	rbp
+100000ef1:	48 89 e5 	mov	rbp, rsp
+100000ef4:	89 7d fc 	mov	dword ptr [rbp - 4], edi
+100000ef7:	8b 7d fc 	mov	edi, dword ptr [rbp - 4]
+100000efa:	83 c7 03 	add	edi, 3
+100000efd:	89 f8 	mov	eax, edi
+100000eff:	5d 	pop	rbp
+100000f00:	c3 	ret
+100000f01:	66 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00 	nop	word ptr cs:[rax + rax]
+100000f10:	55 	push	rbp
+100000f11:	48 89 e5 	mov	rbp, rsp
+100000f14:	48 83 ec 20 	sub	rsp, 32
+100000f18:	bf 05 00 00 00 	mov	edi, 5
+100000f1d:	c7 45 fc 00 00 00 00 	mov	dword ptr [rbp - 4], 0
+100000f24:	e8 c7 ff ff ff 	call	-57 <__Z8functioni>
+100000f29:	48 8d 7d f0 	lea	rdi, [rbp - 16]
+100000f2d:	be 05 00 00 00 	mov	esi, 5
+100000f32:	89 45 ec 	mov	dword ptr [rbp - 20], eax
+100000f35:	e8 5c 00 00 00 	call	92
+100000f3a:	48 8d 7d f8 	lea	rdi, [rbp - 8]
+100000f3e:	be 05 00 00 00 	mov	esi, 5
+100000f43:	89 45 e8 	mov	dword ptr [rbp - 24], eax
+100000f46:	e8 35 00 00 00 	call	53 <__ZZ4mainENK3$_0clEi>
+100000f4b:	31 f6 	xor	esi, esi
+100000f4d:	89 45 e4 	mov	dword ptr [rbp - 28], eax
+100000f50:	89 f0 	mov	eax, esi
+100000f52:	48 83 c4 20 	add	rsp, 32
+100000f56:	5d 	pop	rbp
+100000f57:	c3 	ret
+100000f58:	0f 1f 84 00 00 00 00 00 	nop	dword ptr [rax + rax]
+100000f60:	55 	push	rbp
+100000f61:	48 89 e5 	mov	rbp, rsp
+100000f64:	48 89 7d f8 	mov	qword ptr [rbp - 8], rdi
+100000f68:	89 75 f4 	mov	dword ptr [rbp - 12], esi
+100000f6b:	8b 75 f4 	mov	esi, dword ptr [rbp - 12]
+100000f6e:	83 c6 03 	add	esi, 3
+100000f71:	89 f0 	mov	eax, esi
+100000f73:	5d 	pop	rbp
+100000f74:	c3 	ret
+100000f75:	66 66 2e 0f 1f 84 00 00 00 00 00 	nop	word ptr cs:[rax + rax]
+100000f80:	55 	push	rbp
+100000f81:	48 89 e5 	mov	rbp, rsp
+100000f84:	48 89 7d f8 	mov	qword ptr [rbp - 8], rdi
+100000f88:	89 75 f4 	mov	dword ptr [rbp - 12], esi
+100000f8b:	8b 75 f4 	mov	esi, dword ptr [rbp - 12]
+100000f8e:	83 c6 03 	add	esi, 3
+100000f91:	89 f0 	mov	eax, esi
+100000f93:	5d 	pop	rbp
+100000f94:	c3 	ret
+
+__Z8functioni:
+100000ef0:	55 	push	rbp
+100000ef1:	48 89 e5 	mov	rbp, rsp
+100000ef4:	89 7d fc 	mov	dword ptr [rbp - 4], edi
+100000ef7:	8b 7d fc 	mov	edi, dword ptr [rbp - 4]
+100000efa:	83 c7 03 	add	edi, 3
+100000efd:	89 f8 	mov	eax, edi
+100000eff:	5d 	pop	rbp
+100000f00:	c3 	ret
+100000f01:	66 66 66 66 66 66 2e 0f 1f 84 00 00 00 00 00 	nop	word ptr cs:[rax + rax]
+
+_main:
+100000f10:	55 	push	rbp
+100000f11:	48 89 e5 	mov	rbp, rsp
+100000f14:	48 83 ec 20 	sub	rsp, 32
+100000f18:	bf 05 00 00 00 	mov	edi, 5
+100000f1d:	c7 45 fc 00 00 00 00 	mov	dword ptr [rbp - 4], 0
+100000f24:	e8 c7 ff ff ff 	call	-57 <__Z8functioni>
+100000f29:	48 8d 7d f0 	lea	rdi, [rbp - 16]
+100000f2d:	be 05 00 00 00 	mov	esi, 5
+100000f32:	89 45 ec 	mov	dword ptr [rbp - 20], eax
+100000f35:	e8 5c 00 00 00 	call	92
+100000f3a:	48 8d 7d f8 	lea	rdi, [rbp - 8]
+100000f3e:	be 05 00 00 00 	mov	esi, 5
+100000f43:	89 45 e8 	mov	dword ptr [rbp - 24], eax
+100000f46:	e8 35 00 00 00 	call	53 <__ZZ4mainENK3$_0clEi>
+100000f4b:	31 f6 	xor	esi, esi
+100000f4d:	89 45 e4 	mov	dword ptr [rbp - 28], eax
+100000f50:	89 f0 	mov	eax, esi
+100000f52:	48 83 c4 20 	add	rsp, 32
+100000f56:	5d 	pop	rbp
+100000f57:	c3 	ret
+100000f58:	0f 1f 84 00 00 00 00 00 	nop	dword ptr [rax + rax]
+
+__ZN7FunctorclEi:
+100000f60:	55 	push	rbp
+100000f61:	48 89 e5 	mov	rbp, rsp
+100000f64:	48 89 7d f8 	mov	qword ptr [rbp - 8], rdi
+100000f68:	89 75 f4 	mov	dword ptr [rbp - 12], esi
+100000f6b:	8b 75 f4 	mov	esi, dword ptr [rbp - 12]
+100000f6e:	83 c6 03 	add	esi, 3
+100000f71:	89 f0 	mov	eax, esi
+100000f73:	5d 	pop	rbp
+100000f74:	c3 	ret
+100000f75:	66 66 2e 0f 1f 84 00 00 00 00 00 	nop	word ptr cs:[rax + rax]
+
+__ZZ4mainENK3$_0clEi:
+100000f80:	55 	push	rbp
+100000f81:	48 89 e5 	mov	rbp, rsp
+100000f84:	48 89 7d f8 	mov	qword ptr [rbp - 8], rdi
+100000f88:	89 75 f4 	mov	dword ptr [rbp - 12], esi
+100000f8b:	8b 75 f4 	mov	esi, dword ptr [rbp - 12]
+100000f8e:	83 c6 03 	add	esi, 3
+100000f91:	89 f0 	mov	eax, esi
+100000f93:	5d 	pop	rbp
+100000f94:	c3 	ret
+Disassembly of section __TEXT,__stubs:
+__stubs:
+100000f96:	ff 25 74 00 00 00 	jmp	qword ptr [rip + 116]
+Disassembly of section __TEXT,__stub_helper:
+__stub_helper:
+100000f9c:	4c 8d 1d 65 00 00 00 	lea	r11, [rip + 101]
+100000fa3:	41 53 	push	r11
+100000fa5:	ff 25 55 00 00 00 	jmp	qword ptr [rip + 85]
+100000fab:	90 	nop
