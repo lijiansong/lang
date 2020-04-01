@@ -22,3 +22,6 @@
 [submodule "c/just-for-fun/game-of-life"]
 	path = c/just-for-fun/game-of-life
 	url = https://github.com/duckythescientist/obfuscatedLife
+[submodule "assembly/wcx64"]
+	path = assembly/wcx64
+	url = https://github.com/eliben/wcx64.git
