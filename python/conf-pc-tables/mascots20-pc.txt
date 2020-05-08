@@ -1,0 +1,43 @@
+Jussara Almeida, Federal University of Minas Gerais, Brazil
+Jonatha Anselmi, INRIA, France
+Louiza Bouallouche-Medjkourne, University of Bejaia, Algeria
+Gilles Bernot, Universite' Cote d'Azur, France
+Andre-Luc Beylot, Institut National Polytechnique de Toulouse, France
+Huibo Bi, Beijing University of Technology, China
+Jalil Boukhobza, IRT, Lab-STICC, Univ. Bretagne Occidentale, Brest, France
+Ivona Brandic, Technical University of Vienna, Austria
+Valeria Cardellini, University of Roma Tor Vergata, Italy
+Emiliano Casalicchio, University of Rome Sapienza, Italy
+Suryadip Chakraborty, University of Cincinnati, USA
+Claudio Cicconetti, IIT-CNR, Pisa,  Italy
+Tadeusz Czachorski, IITIS, Polish Academy of Sciences, Poland
+Sofiene Djahel, Manchester Metropolitan University, UK
+Joanna Domanska, IITIS, Polish Academy of Sciences, Poland
+Lorenzo Donatiello, University of Bologna, Italy
+Josu Doncel, University of the Basque Country, Spain
+Jean-Michel Fourneau, University of Versailles, France
+Anshul Gandhi, Stony Brook University, USA
+Erol Gelenbe, IITIS, Polish Academy of Sciences and Univ. Cote d'Azur, France
+Krzysztof Grochla, IITIS, Polish Academy of Sciences, Poland
+Yassine Hadjadj-Aoul, IRISA, France
+Adelkrim Haqiq, University of Hassan I, Morocco
+Khaled Hussain, Assiut University, Egypt
+Alexandru Iosup, Free University of Amsterdam, Netherlands
+Alain Jean-Marie, INRIA Sophia-Antipolis, France
+Samuel Kounev, University of Wuerzburg, Germany
+Ricardo Lent, University of Houston, USA
+Aniket Mahanti, University of Auckland, New Zealand
+Raymond Marie, University of Rennes, France
+Luisa Massari, University of Pavia, Italy
+Daniel Menasce, George Mason University, USA
+Jehan-Francois Paris, University of Houston, USA
+Nihal Pekergin, University of Paris-Est-Creteil, France
+Riccardo Pinciroli, College of William and Mary, USA
+Paolo Romano, Lisbon University, Portugal
+Dan Rubenstein, Columbia University, USA
+Gerardo Rubino, INRIA, France
+Daniele Tessera, Catholic University of Sacred Heart, Italy
+Benny van Houdt, University of Antwerp, Belgium
+Marco Vieira, University of Coimbra, Portugal
+Umberto Villano, University of Sannio, Italy
+Carey Williamson, University of Calgary, Canada
