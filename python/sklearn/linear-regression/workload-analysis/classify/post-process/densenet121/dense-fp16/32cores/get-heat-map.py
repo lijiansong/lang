@@ -394,4 +394,5 @@ if __name__ == '__main__':
     get_tn_vs_dp('densenet121-dense-fp16.txt', 'tn_dp.txt', densenet121_dense_fp16_best_config_list)
     get_tn_vs_mp('densenet121-dense-fp16.txt', 'tn_mp.txt', densenet121_dense_fp16_best_config_list)
     get_dp_vs_mp('densenet121-dense-fp16.txt', 'dp_mp.txt', densenet121_dense_fp16_best_config_list)
+    get_tn_vs_dp('densenet121-dense-fp16-hw.txt', 'hw-tn_dp.txt', densenet121_dense_fp16_best_config_list)
 

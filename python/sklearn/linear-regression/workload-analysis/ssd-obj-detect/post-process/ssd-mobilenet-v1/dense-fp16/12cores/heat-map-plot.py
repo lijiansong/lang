@@ -24,7 +24,11 @@ def plot_heatmap(in_file_name, out_fig_name, xlabel_name, ylabel_name, xtick_lab
     _, ax = plt.subplots(figsize=(6, 5))
     #p1 = sns.heatmap(df, cmap='Reds', annot=True)
     #fig = sns.heatmap(df, cmap='Reds', ax=ax, cbar_kws={'label': 'End to end FPS'}, linewidths=0.01, linecolor='black')
-    fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'Normalized end to end FPS'}, linewidths=0.01, linecolor='black')
+    if 'hw' in in_file_name:
+        fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'Normalized hardware FPS'}, linewidths=0.01, linecolor='black')
+    else:
+        fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'Normalized end-to-end FPS'}, linewidths=0.01, linecolor='black')
+
     #fig = sns.heatmap(df, cmap='YlGnBu', ax=ax, cbar_kws={'label': 'End to end FPS'}, linewidths=0.0, linecolor='black')
     plt.xlabel(xlabel_name)
     plt.ylabel(ylabel_name)
@@ -50,3 +54,4 @@ if __name__ == '__main__':
     plot_heatmap('bs_tn.txt', 'bs_tn.png', 'thread number', 'batch size', tn_ticklabels, bs_ticklabels)
     plot_heatmap('tn_dp.txt', 'tn_dp.png', 'data parallelism', 'thread number', dp_ticklabels, tn_ticklabels)
     plot_heatmap('tn_mp.txt', 'tn_mp.png', 'model parallelism', 'thread number', mp_ticklabels, tn_ticklabels)
+    plot_heatmap('hw-tn_dp.txt', 'hw-tn_dp.png', 'data parallelism', 'thread number', dp_ticklabels, tn_ticklabels)

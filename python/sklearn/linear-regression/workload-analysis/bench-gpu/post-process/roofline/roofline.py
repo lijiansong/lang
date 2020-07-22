@@ -74,7 +74,7 @@ def draw_model_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
     # 1. plot the <flops, intensity> pairs
     for k, v in gflops_intensity_dict.items():
         # k is net name
-        if k == 'MobileNet':
+        if k == 'MobileNetV1':
             for batch_size, gflops, intensity in v:
                 ax.plot(intensity, gflops, 'x',
                         color=colors[net_color_map[k]], label=k, marker='x')
@@ -157,33 +157,39 @@ def draw_op_roofline(op_data_list, peak_flops, peak_membdw):
     # 1. plot the <flops, intensity> pairs
     for i in op_data_list:
         op_type, flops, intensity = str(i[0]), i[1], i[2]
-        if op_type == 'Convolution':
+        if op_type == 'Convolution' or op_type == 'convolution':
             ax.plot(intensity, flops, 'x',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='x')
         elif op_type == 'InnerProduct':
             ax.plot(intensity, flops, 'v',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='v')
-        elif op_type == 'Pooling':
+        elif op_type == 'Pooling' or op_type == 'pooling':
             ax.plot(intensity, flops, '*',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='*')
-        elif op_type == 'Scale':
+        elif op_type == 'Scale' or op_type == 'scale':
             ax.plot(intensity, flops, 's',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='s')
-        elif op_type == 'Eltwise':
+        elif op_type == 'Eltwise' or op_type == 'element-wise':
             ax.plot(intensity, flops, 'd',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='d')
-        elif op_type == 'ReLU':
+        elif op_type == 'ReLU' or op_type == 'relu':
             ax.plot(intensity, flops, 'p',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='p')
-        elif op_type == 'BatchNorm':
+        elif op_type == 'BatchNorm' or op_type == 'batchnorm':
             ax.plot(intensity, flops, 'o',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='o')
-        elif op_type == 'Softmax':
+        elif op_type == 'Softmax' or op_type == 'softmax':
             ax.plot(intensity, flops, '+',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='+')
-        elif op_type == 'LRN':
+        elif op_type == 'LRN' or op_type == 'lrn':
             ax.plot(intensity, flops, '^',
                     color=colors[layer_color_map[op_type]], label=op_type, marker='^')
+        elif op_type == 'GEMV' or op_type == 'gemv':
+            ax.plot(intensity, flops, '<',
+                    color=colors[layer_color_map[op_type]], label=op_type, marker='<')
+        elif op_type == 'GEMM' or op_type == 'gemm':
+            ax.plot(intensity, flops, 'P',
+                    color=colors[layer_color_map[op_type]], label=op_type, marker='P')
 
     # 2. plot the roof line
     x1 = peak_flops / peak_membdw
@@ -216,12 +222,21 @@ if __name__ == '__main__':
     titan_model_data = extract_model_data('titan_xp_model_throughput.txt')
     titan_peak_flops = 12.15*1000
     titan_peak_mem_bandwidth = 547.7
-    #draw_model_roofline(titan_model_data, titan_peak_flops, titan_peak_mem_bandwidth)
+    draw_model_roofline(titan_model_data, titan_peak_flops, titan_peak_mem_bandwidth)
+
     k40m_model_data = extract_model_data('tesla_k40m_model_throughput.txt')
     k40m_peak_flops = 5.046*1000
     k40m_peak_mem_bandwidth = 288.4
     #draw_model_roofline(k40m_model_data, titan_peak_flops, titan_peak_mem_bandwidth)
+
     titan_op_data = extract_op_data('titan_xp_op_throughput.txt')
     draw_op_roofline(titan_op_data, titan_peak_flops, titan_peak_mem_bandwidth)
+
     k40m_op_data = extract_op_data('tesla_k40m_op_throughput.txt')
-    draw_op_roofline(k40m_op_data, k40m_peak_flops, k40m_peak_mem_bandwidth)
+    #draw_op_roofline(k40m_op_data, k40m_peak_flops, k40m_peak_mem_bandwidth)
+
+    tesla_k40m_mobilenet_op_data = extract_op_data('tesla_k40m_mobilenet_batch_op.txt')
+    #draw_op_roofline(tesla_k40m_mobilenet_op_data, k40m_peak_flops, k40m_peak_mem_bandwidth)
+
+    titan_xp_mobilenet_op_data = extract_op_data('titan_xp_mobilenet_batch_op.txt')
+    draw_op_roofline(titan_xp_mobilenet_op_data, titan_peak_flops, titan_peak_mem_bandwidth)

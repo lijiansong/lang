@@ -38,6 +38,29 @@ def extract_model_data(data_file_path, debug=True):
         data_file_reader.close()
     return gflops_intensity_dict
 
+def extract_model_throughput(data_file_path, debug=True):
+    data_file_reader = open(data_file_path, 'r')
+    # key is net name, value is list of <batch size, gflops, intensity> tuples
+    gflops_intensity_dict = {}
+    try:
+        text_lines = data_file_reader.readlines()
+        for i, line in enumerate(text_lines):
+            # extract gflops
+            current_line = line.rstrip('\n')
+            data_list = current_line.split('\t')
+            net_name = data_list[0]
+            # batch size is 1.
+            dict_values_list = (1, float(data_list[1]), float(data_list[2]))
+            if net_name not in gflops_intensity_dict:
+                gflops_intensity_dict[net_name] = [dict_values_list]
+            else:
+                gflops_intensity_dict[net_name].append(dict_values_list)
+        if debug:
+            print(gflops_intensity_dict)
+    finally:
+        data_file_reader.close()
+    return gflops_intensity_dict
+
 def extract_op_data(data_file_path, debug=True):
     data_file_reader = open(data_file_path, 'r')
     # key is net name, value is list of <batch size, gflops, intensity> tuples
@@ -74,7 +97,7 @@ def draw_model_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
     # 1. plot the <flops, intensity> pairs
     for k, v in gflops_intensity_dict.items():
         # k is net name
-        if k == 'MobileNet':
+        if k == 'MobileNetV1':
             for batch_size, gflops, intensity in v:
                 ax.plot(intensity, gflops, 'x',
                         color=colors[net_color_map[k]], label=k, marker='x')
@@ -223,3 +246,5 @@ if __name__ == '__main__':
 
     ascend310_op_data = extract_op_data('ascend310_op_throughput.txt')
     draw_op_roofline(ascend310_op_data, ascend310_peak_flops, ascend310_peak_mem_bandwidth)
+    ascend310_model_data = extract_model_throughput('ascend310_model_throughput.txt')
+    draw_model_roofline(ascend310_model_data, ascend310_peak_flops, ascend310_peak_mem_bandwidth)

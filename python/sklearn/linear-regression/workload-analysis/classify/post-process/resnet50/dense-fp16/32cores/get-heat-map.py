@@ -394,4 +394,6 @@ if __name__ == '__main__':
     get_tn_vs_dp('resnet50-dense-fp16.txt', 'tn_dp.txt', resnet50_dense_fp16_best_config_list)
     get_tn_vs_mp('resnet50-dense-fp16.txt', 'tn_mp.txt', resnet50_dense_fp16_best_config_list)
     get_dp_vs_mp('resnet50-dense-fp16.txt', 'dp_mp.txt', resnet50_dense_fp16_best_config_list)
+    get_tn_vs_dp('resnet50-dense-fp16-hw.txt', 'hw-tn_dp.txt', resnet50_dense_fp16_best_config_list)
+    get_bs_vs_tn('resnet50-dense-fp16-hw.txt', 'hw-bs_tn.txt', resnet50_dense_fp16_best_config_list)
 

@@ -408,4 +408,5 @@ if __name__ == '__main__':
     get_tn_vs_dp('ssd_mobilenetv1-dense-fp16.txt', 'tn_dp.txt', ssd_mobilenetv1_dense_fp16_best_config_list)
     get_tn_vs_mp('ssd_mobilenetv1-dense-fp16.txt', 'tn_mp.txt', ssd_mobilenetv1_dense_fp16_best_config_list)
     get_dp_vs_mp('ssd_mobilenetv1-dense-fp16.txt', 'dp_mp.txt', ssd_mobilenetv1_dense_fp16_best_config_list)
+    get_tn_vs_dp('ssd_mobilenetv1-dense-fp16-hw.txt', 'hw-tn_dp.txt', ssd_mobilenetv1_dense_fp16_best_config_list)
 

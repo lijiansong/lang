@@ -74,7 +74,7 @@ def draw_model_roofline(gflops_intensity_dict, peak_flops, peak_membdw):
     # 1. plot the <flops, intensity> pairs
     for k, v in gflops_intensity_dict.items():
         # k is net name
-        if k == 'MobileNet':
+        if k == 'MobileNetV1':
             for batch_size, gflops, intensity in v:
                 ax.plot(intensity, gflops, 'x',
                         color=colors[net_color_map[k]], label=k, marker='x')

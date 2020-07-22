@@ -394,4 +394,5 @@ if __name__ == '__main__':
     get_tn_vs_dp('mobilenet-dense-fp16.txt', 'tn_dp.txt', mobilenet_dense_fp16_best_config_list)
     get_tn_vs_mp('mobilenet-dense-fp16.txt', 'tn_mp.txt', mobilenet_dense_fp16_best_config_list)
     get_dp_vs_mp('mobilenet-dense-fp16.txt', 'dp_mp.txt', mobilenet_dense_fp16_best_config_list)
+    get_tn_vs_dp('mobilenet-dense-fp16-hw.txt', 'hw-tn_dp.txt', mobilenet_dense_fp16_best_config_list)
 

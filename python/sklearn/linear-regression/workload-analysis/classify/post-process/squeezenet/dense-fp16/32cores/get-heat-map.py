@@ -391,4 +391,5 @@ if __name__ == '__main__':
     get_tn_vs_dp('squeezenet-dense-fp16.txt', 'tn_dp.txt', squeezenet_dense_fp16_best_config_list)
     get_tn_vs_mp('squeezenet-dense-fp16.txt', 'tn_mp.txt', squeezenet_dense_fp16_best_config_list)
     get_dp_vs_mp('squeezenet-dense-fp16.txt', 'dp_mp.txt', squeezenet_dense_fp16_best_config_list)
+    get_tn_vs_dp('squeezenet-dense-fp16-hw.txt', 'hw-tn_dp.txt', squeezenet_dense_fp16_best_config_list)
 
