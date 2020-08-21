@@ -14,6 +14,8 @@ The control and data flow of a program can be represented using continuations.
 
 An interesting idea: 在计算图中引入continuation的概念，是否存在一些有意思的研究问题？
 
+现在已有研究从PL的角度不引入计算图，比如Julia等: <https://arxiv.org/pdf/1811.01457.pdf>
+
 ## REFs
 
 - <https://en.wikipedia.org/wiki/Continuation>
