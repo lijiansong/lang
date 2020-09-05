@@ -48,8 +48,11 @@ if __name__ == '__main__':
     print(len(X), len(y))
     clf.fit(X, y)
     print(clf.coef_)
+    # https://statinfer.com/204-1-7-adjusted-r-squared-in-python/
+    print('R-squared:', clf.score(X, y))
     print('===---------------- dense fp16 hardware fps ----------------===')
     X, y = get_data('densenet121-dense-fp16-hw.txt')
     print(len(X), len(y))
     clf.fit(X, y)
     print(clf.coef_)
+    print('R-squared:', clf.score(X, y))
