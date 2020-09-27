@@ -1,0 +1,145 @@
+Manuel Acacio	University of Murcia	Spain
+Abdulraqeb Alhammadi	Faculty of Engineering, Multimedia University	Malaysia
+Karl Andersson	Luleå University of Technology	Sweden
+Valentina Balas	Aurel Vlaicu University of Arad	Romania
+Silvio Barra	University of Naples Federico II	Italy
+Md Zakirul Alam Bhuiyan	Fordham University	USA
+Gergely Biczók	Budapest University of Technology and Economics	Hungary
+Carmen Bisogni	University of Salerno	Italy
+Jakramate Bootkrajang	Chiang Mai University	Thailand
+Rajendra Boppana	University of Texas at San Antonio	USA
+Taotao Cai	Deakin University	Australia
+Wei Cai	The Chinese University of Hong Kong（Shenzhen）	China
+Miriam Capretz	University of Western Ontario	Canada
+Lucia Cascone	University of Salerno	Italy
+Aniello Castiglione	University of Naples Parthenope	Italy
+Luigi Catuogno	Universita' degli Studi di Salerno	Italy
+Yueling Che	Shenzhen University	China
+Cen Chen	National University of Singapore	Singapore
+Fei Chen	Shenzhen University	China
+Quan Chen	Shanghai Jiao Tong University	China
+Yi Chen	The Chinese University of Hong Kong, Shenzhen	China
+Lei Cheng	Shenzhen Research Institute of Big Data, Chinese University of Hong Kong (Shenzhen)	Hong Kong
+Andrea Corriga	University of Cagliari	Italy
+Ireneusz Czarnowski	Gdynia Maritime University	Poland
+Masoud Daneshtalab	Mälardalen University	Sweden
+Bin Dong	Lawrence Berkeley National Lab	USA
+Osman Elgawi	Uninversity of California, Los Angeles	USA
+Jianbin Fang	National University of Defence Technology	China
+Franco Frattolillo	University of Sannio	Italy
+Ryan Friese	Pacific Northwest National Laboratory	USA
+Song Fu	University of North Texas	USA
+Amlan Ganguly	Rochester Institute of Technology	USA
+Nitin Garegrat	Microsoft	USA
+Vasileios Gkioulos	Norwegian University of Science and Technology	Norway
+Danilo Gligoroski	Norwegian University of Science and Technology	Norway
+Luis Gomes	Universida de Nova Lisboa	Portugal
+Yuwan Gu	Changzhou University	China
+Zhaoquan Gu	Guangzhou University	China
+Marco Guazzone	University of Piemonte Orientale	Italy
+Deke Guo	National University of Defense Technology	China
+Jian-Jun Han	Huazhong University of Science and Technology	China
+Jinguang Han	Qeen's University Belfast	United Kingdom
+Ying He	Shenzhen University	China
+Zaobo He	Miami University	USA
+Xiaolu Hou	Nanyang Technological University	Singapore
+Sun-Yuan Hsieh	National Cheng Kung University	Taiwan
+Biao Hu	Beijing University of Chemical Technology	China
+Guangwu Hu	Shenzhen Institute of Information Technology	China
+Ning Hu	Guangzhou University	China
+Huawei Huang	Sun Yat-Sen University	China
+Kuo-Chan Huang	National Taichung University	Taiwan
+Miaoqing Huang	University of Arkansas	USA
+Raihan Ul Islam	Luleå University of Technology	Sweden
+Wei Jiang	University of Electronic Science and Technology of China	China
+Jian Jin	East China Normal University	China
+Dan Johansson	Umeå University	Sweden
+Mahmut Kandemir	Penn State University	USA
+Panagiotis Karampelas	Hellenic Air Force Academy	Greece
+Ivan Kotuliak	Slovak University of Technology	Slovakia
+Ondrej Krejcar	University of Hradec Kralove	Czech Republic
+Minseok Kwon	Rochester Institute of Technology	USA
+Chin-Feng Lai	National Ilan University	Taiwan
+Yuanjun Laili	Beihang University	China
+Laurent Lefevre	INRIA	France
+Aiping Li	National University of Defense Technology	China
+Fuliang Li	Northeastern University	China
+Peng Li	The University of Aizu	Japan
+Qing Li	Southern University of Science and Technology	China
+Ruixuan Li	Huazhong University of Science and Technology	China
+Yupeng Li	University of Toronto	Canada
+Zhida Li	Simon Fraser Uiversity	Canada
+Qing Liao	Harbin Institute of Technology（Shenzhen）	China
+Ling Liu	Shenzhen University	China
+Yan Liu	Hunan University	China
+Chengwen Luo	Shenzhen University	China
+Entao Luo	Central South University	China
+Mario Marino	Leeds Beckett University	United Kingdom
+Weizhi Meng	Technical University of Denmark	Denmark
+Zhongxing Ming	Shenzhen University	China
+Paolo Mori	IIT, CNR	Italy
+Fabio Narducci	University of Salerno	Italy
+Marek Ogiela	AGH University of Science and Technology	Poland
+Urszula Ogiela	Pedagogical University of Krakow	Poland
+Satoru Ohta	Toyama Prefectural University	Japan
+Ruxandra Olimid	University of Bucharest	Romania
+Jeng-Shyang Pan	National Kaohsiung University of Applied Sciences	Taiwan
+Marcin Paprzycki	IBSPAN	Poland
+Ignazio Passero	Università degli Studi di Salerno	Italy
+Amanda Peart	University of Portsmouth	United Kingdom
+Chiara Pero	University of Salerno	Italy
+Kalyan Perumalla	Oak Ridge National Laboratory	USA
+Dana Petcu	West University of Timisoara	Romania
+Sven Plaga	Fraunhofer AISEC	Germany
+Dr. rer. nat. habil. Andreas Polze	University of Potsdam	Germany
+Lucian Prodan	Politehnica University of Timisoara	Romania
+Deepak Puthal	University of Technology Sydney	Australia
+Lianyong Qi	Qufu Normal University	China
+Thomas Rauber	University Bayreuth	Germany
+Jiankang Ren	Dalian University of Technology	China
+Kaijun Ren	National University of Defense Technology	China
+Xuebin Ren	Xi'an Jiaotong University	China
+Yongmao Ren	Computer Network Information Center, Chinese Academy of Sciences	China
+Morris Riedel	Forschungszentrum Juelich	Germany
+En Shao	Institute of Computing Technology, Chinese Academy of Sciences	China
+Domenico Talia	University of Calabria	Italy
+Zhiyuan Tan	Edinburgh Napier University	United Kingdom
+Feilong Tang	Shanghai Jiao Tong University	China
+Usman Tariq	Prince Sattam bin Abdulaziz University	Saudi Arabia
+Parimala Thulasiraman	University of Manitoba	Canada
+Ioan Ungurean	Stefan cel Mare University of Suceava	Romania
+Bang Wang	Huazhong University of Science and Technology	China
+Lu Wang	Shenzhen University	China
+Di Wu	Norwegian University of Science and Technology	Norway
+Yulei Wu	University of Exeter	United Kingdom
+Guoqi Xie	Hunan University	China
+Ruitao Xie	Shenzhen University	China
+Xiang Xie	University of Cambridge	United Kingdom
+Yong Xie	Xiamen University of Technology	China
+Liudong Xing	Publications Chair, University of Massachusetts, Dartmouth	USA
+Xiaolong Xu	Nanjing University of Information Science and Technology	China
+Chaoshu Yang	Guizhou University	China
+Chi Yang	Huazhong Unviersity of Science and Technology	China
+Fan Yang	Hunan University	China
+Liusha Yang	Hong Kong University of Science and Technology	Hong Kong
+Qinmin Yang	Zhejiang University	China
+Shu Yang	Shenzhen University	China
+Wang Yang	Central South University	China
+Junmei Yao	Shenzhen University	China
+Iling Yen	University of Texas at Dallas	USA
+Chen Yu	Huazhong University of Science and Technology	China
+Shanqing Yu	Zhejiang University of Technology	China
+Zeng Zeng	A*STAR	Singapore
+Bin Zhang	Peng Cheng Laboratory	China
+Lei Zhang	Shenzhen University	China
+Xu Zhang	Nanjing University	China
+Yuchao Zhang	Beijing University of Posts and Telecommunications	China
+Yaliang Zhao	Henan University	China
+Xu Zheng	University of Electronic Science and Technology of China	China
+Longfei Zhou	Massachusetts Institute of Technology	USA
+Xiaokang Zhou	Shiga University	Japan
+Yipeng Zhou	Macquarie University	Australia
+Dakai Zhu	University of Texas at San Antonio	USA
+Guangxu Zhu	Shenzhen Research Institute of Big Data	China
+Xiaomin Zhu	National University of Defense Technology	China
+Yongpan Zou	Shenzhen University	China

@@ -1,0 +1,111 @@
+Karl Andersson	Lulea University of Technology	Sweden
+Yan Bin	National Taiwan University	Taiwan
+Javier Garcia Blas	Universidad Carlos III De Madrid	Spain
+Suren Byna	Lawrence Berkeley Laboratory	USA
+Yue-Shan Chang	National Taipei University	Taiwan
+Xiaolin Chang	Beijing Jiaotong University	China
+Haopeng Chen	Shanghai Jiao Tong University	China
+Chi-Hua Chen	National Chiao Tung University	Taiwan
+Yuanfang Chen	Guangdong University of Petrochemical Technology	China
+Jing Chen	National Cheng Kung University	Taiwan
+Bowen Chen	Soochow University	China
+Dehua Chen	Donghua University	China
+Dickson Chiu	University of Hong Kong	Hong Kong
+Shuo-Yan Chou	National Taiwan University of Science and Technology	Taiwan
+Raphael Couturier	University Bourgogne Franche-Comte	France
+Leonardo Cruciol	University of Brasilia	Brazil
+Ireneusz Czarnowski	Gdynia Maritime University	Poland
+Masoud Daneshtalab	University of Turku	Finland
+Xiaoju Dong	Shanghai Jiao Tong University	China
+Bin Dong	Lawrence Berkeley National Lab	USA
+Bei Dong	Shaanxi Normal University	China
+Maurizio Drocco	University of Torino	Italy
+Nicolas Erdody	Open Parallel Ltd	New Zealand
+Jianbin Fang	National University of Defense Technology	China
+Ugo Fiore	Federico II University	Italy
+Franco Frattolillo	University of Sannio	Italy
+Hao Gao	Nanjing University of Posts and Telecommunications	China
+J. Daniel Garcia	University Carlos III of Madrid	Spain
+Harald Gjermundrod	University of Nicosia	Cyprus
+Jing Gong	KTH Royal Institute of Technology	Sweden
+Christos Grecos	Central Washington University	USA
+Daniel Grosu	Wayne State University	USA
+Muhammad Talha Gul	Superior University	Pakistan
+Yanfei Guo	Argonne National Laboratory	USA
+Brahim Hamid	University of Toulouse	France
+Fei Hao	Shaanxi Normal University	China
+Wei He	University of Science & Technology Beijing	China
+Mohammad Shahadat	Hossain University of Chittagong	Banglade
+Sun-Yuan Hsieh	National Cheng Kung University	Taiwan
+Haojun Huang	Huazhong University of Science and Technology	China
+Wei Huang	Google	Canada
+Jiawei Huang	Central South Univeristy	China
+Kuo-Chan Huang	National Taichung University	Taiwan
+Maciej Huk	Wroclaw University of Science and Technology	Poland
+Shadi Ibrahim	Inria Rennes Bretagne Atlantique Research Center	France
+Wenjun Jiang	Hunan University	China
+Michihiro Koibuchi	National Institute of Informatics	Japan
+Dimosthenis Kyriazis	University of Piraeus	Greece
+Kuan-Chou Lai	National Taichung University	Taiwan
+Hicham Lakhlef	University of Technologie of Compiegne	France
+KP Lam	University of Keele	UK
+Che-Rung Roger Lee	National Tsing Hua University	Taiwan
+Carson Leung	University of Manitoba C	anada
+Yusen Li	Nankai University	China
+Wenjia Li	New York Institute of Technology	USA
+Chang Hong Lin	National Taiwan University of Science and Technology	Taiwan
+Yongchao Liu	Georgia Institute of Technology	USA
+Qinghua Lu Lu	China University of Petroleum	China
+Xinjun Mao	National University of Defense Technology	China
+Barbara Masucci	University of Salerno	Italy
+Susumu Matsumae	Saga University	Japan
+Gabriele Mencagli	University of Pisa	Italy
+Jose Merseguer	Universidad de Zaragoza	Spain
+Miguel Mosteiro	Pace University	USA
+Hirotaka Ono	Nagoya University	Japan
+Zhonghong Ou	Beijing University of Posts and Telecommunications	China
+Cathryn Peoples	Ulster University & The Open University	UK
+Dana Petcu	West University of Timisoara	Romania
+Raffaele Pizzolante	University of Salerno	Italy
+Radu Prodan	University of Innsbruck	Austria
+Jiankang Ren	Dalian University of Technology	China
+Morris Riedel	Forschungszentrum Jülich, Central Institute for Applied Mathematics	Germany
+Ivan Rodero	Rutgers University	USA
+Subhash Saini	National Aeronautics and Space Administration	USA
+Hamid Sarbazi-Azad	Sharif University of Technology and Institute for Research in Fundamental Sciences	Iran
+Savio Sciancalepore	Hamad bin Khalifa University	Qatar
+Jun Shen	University of Wollongong	Australia
+Bing Shi	Wuhan University of Technology	China
+Federico Silla	Universitat Politecnica de Valencia	Spain
+Vlado Stankovski	University of Ljubljana	Slovenia
+Dong Su	IBM T. J. Watson Research Center	USA
+Jianguo Sun	Harbin Engineering University	China
+Javid Taheri	Karlstad University	Sweden
+Daisuke Takahashi	University of Tsukuba	Japan
+Andrei Tchernykh	CICESE Research Center	Mexico
+Hiroyuki Tomiyama	Ritsumeikan University	Japan
+Salvatore Venticinque	University of Campania "Luigi Vanvitelli"	Italy
+Massimo Villari	University of Messina	Italy
+Tian Wang	Huaqiao University	China
+Chen Wang	Huazhong University of Science and Technology	China
+Jin Wei	University of Akron	USA
+Weigang Wu	Sun Yat-sen University	China
+Muzhou Xiong	China Univeristy of Geosciences	China
+Jingling Xue	University of New South Wales	Australia
+Wei Xue	Tsinghua University	China
+Ramin Yahyapour	University Gottingen	Germany
+Chao-Tung Yang	Tunghai University	Taiwan
+Baoliu Ye	Nanjing University	China
+Yong Zhang	Liaoning Normal University	China
+Xu Zhang	Nanjing University	China
+Peng Zhang	Stony Brook University	USA
+Qieshi Zhang	Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences	China
+Shigeng Zhang	Central South University	China
+Xu Zhang	Nanjing University	China
+Liang Zhao	Shenyang Aerospace University	China
+Wenbo Zhao	Xidian University	China
+Huiru Zheng	University of Ulster	UK
+Xiaolong Zheng	Beijing University of Posts and Telecommunications	China
+Yingjie Zhou	Sichuan University 	China
+Xingquan(Hill) Zhu	Florida Atlantic University	USA
+Sotirios Ziavras	New Jersey Institute of Technology	USA
