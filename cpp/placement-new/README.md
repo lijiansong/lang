@@ -42,3 +42,4 @@ The operator delete can only delete the storage created in heap, so when placeme
 - <https://www.geeksforgeeks.org/placement-new-operator-cpp/>
 - <https://www.jianshu.com/p/4af119c44086>
 - <https://stackoverflow.com/questions/222557/what-uses-are-there-for-placement-new>
+- C++ Optimization: Making use of Memory Pools: <https://jsdw.me/posts/cpp-memory-pools/>

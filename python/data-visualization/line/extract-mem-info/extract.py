@@ -38,4 +38,6 @@ def extract_and_plot(log_file_name, net_name):
 if __name__ == '__main__':
     #extract_and_plot('resnet-mem-info.log', 'ResNet')
     #extract_and_plot('vgg16-mem-info.log', 'VGG')
-    extract_and_plot('lstm-mem-info.log', 'LSTM')
+    #extract_and_plot('lstm-mem-info.log', 'LSTM')
+    #extract_and_plot('gan-mem-info.log', 'GAN')
+    extract_and_plot('rnn-mem-info.log', 'RNN')
