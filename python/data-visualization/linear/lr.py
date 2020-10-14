@@ -22,7 +22,7 @@ def get_data(file_name):
 
 if __name__ == '__main__':
     clf = linear_model.LinearRegression()
-    X, in_y, out_y = get_data('swap-io.txt')
+    X, in_y, out_y = get_data('swap-io-new.txt')
     print(len(X), len(in_y), len(out_y))
 
     print('===---------------- swap in ----------------===')
