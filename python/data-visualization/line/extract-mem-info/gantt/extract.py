@@ -2,7 +2,11 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import seaborn as sns
 
-def extract_and_plot(log_file_name, net_name):
+
+def extract_and_plot(log_file_name,
+                     net_name,
+                     time_scale=1000.0,
+                     mem_scale=1024.0):
     # 1. extract the malloc & free memory behaviours.
     with open(log_file_name, 'r') as mem_info_reader:
         info_list = mem_info_reader.readlines()
@@ -27,28 +31,37 @@ def extract_and_plot(log_file_name, net_name):
             else:
                 if it_list[0] == 'MALLOC:':
                     # in KB
-                    mem_addr = (int(it_list[1], 16) - start_mem_addr)/1024.0
-                    malloc_size = float(it_list[2])/1024.0
+                    mem_addr = (int(it_list[1], 16) -
+                                start_mem_addr) / time_scale
+                    malloc_size = float(it_list[2]) / mem_scale
                     max_mem_addr = max(max_mem_addr, mem_addr + malloc_size)
                     # in ms
-                    malloc_time_stamp = (int(it_list[3]) - start_time_stamp)/1000.0
+                    malloc_time_stamp = (int(it_list[3]) -
+                                         start_time_stamp) / mem_scale
                     if it_list[1] in malloc_dict:
-                        print('Malloc multiple times! ==> {}: {}, {}, {}'.format(it_list[1], mem_addr, malloc_size, malloc_time_stamp))
+                        print(
+                            'Malloc multiple times! ==> {}: {}, {}, {}'.format(
+                                it_list[1], mem_addr, malloc_size,
+                                malloc_time_stamp))
                         malloc_dict[it_list[1]][0].append(mem_addr)
                         malloc_dict[it_list[1]][1].append(malloc_size)
                         malloc_dict[it_list[1]][2].append(malloc_time_stamp)
                     else:
-                        malloc_dict[it_list[1]] = ([mem_addr], [malloc_size], [malloc_time_stamp], [])
+                        malloc_dict[it_list[1]] = ([mem_addr], [malloc_size],
+                                                   [malloc_time_stamp], [])
                 if it_list[0] == 'FREE:':
-                    free_time_stamp = (int(it_list[2]) - start_time_stamp)/1000.0
+                    free_time_stamp = (int(it_list[2]) -
+                                       start_time_stamp) / time_scale
                     if it_list[1] in malloc_dict:
                         malloc_dict[it_list[1]][3].append(free_time_stamp)
                     else:
-                        print('===> !!!FREE before!!!{}:{}'.format((int(it_list[1], 16) - start_mem_addr)/1024.0, free_time_stamp))
+                        print('===> !!!FREE before!!!{}:{}'.format(
+                            (int(it_list[1], 16) - start_mem_addr) / mem_scale,
+                            free_time_stamp))
                     max_free_time = max(max_free_time, free_time_stamp)
             counter += 1
         print('---> {}'.format(len(malloc_dict)))
-        print(malloc_dict)
+        #print(malloc_dict)
         print('---> max_mem_addr: {}'.format(max_mem_addr))
         print('---> max_free_time: {}'.format(max_free_time))
     # 2. fill out the invalid info
@@ -60,14 +73,19 @@ def extract_and_plot(log_file_name, net_name):
     for k in malloc_dict:
         # go through the [mem_start_addr]
         v = malloc_dict[k]
-        for i, it in enumerate(v[0]):
-            if v[3]:
+        print('len v[0]: {}, v[1]: {}, v[2]: {}, v[3]: {}'.format(
+            len(v[0]), len(v[1]), len(v[2]), len(v[3])))
+        min_len = min(len(v[0]), len(v[1]), len(v[2]), len(v[3]))
+        if min_len > 0:
+            for i in range(min_len):
                 start_malloc_time = v[2][i]
                 start_mem_addr = v[0][i]
                 malloc_size = v[1][i]
                 lifetime = v[3][i] - v[2][i]
-                valid_mem_list.append((start_malloc_time, start_mem_addr, lifetime, malloc_size))
-    print(valid_mem_list)
+                #print('--> {}, {}: {}'.format(i, k, v))
+                valid_mem_list.append(
+                    (start_malloc_time, start_mem_addr, lifetime, malloc_size))
+    #print(valid_mem_list)
 
     # 3. plot valid_mem_list
     colors = sns.color_palette("hls", n_colors=len(valid_mem_list) + 2)
@@ -83,7 +101,8 @@ def extract_and_plot(log_file_name, net_name):
     :             (x, y)---- width -----+
     '''
     for i, data in enumerate(valid_mem_list):
-        start_malloc_time, start_mem_addr, lifetime, malloc_size = data[0], data[1], data[2], data[3]
+        start_malloc_time, start_mem_addr, lifetime, malloc_size = data[
+            0], data[1], data[2], data[3]
         x = start_malloc_time / max_free_time
         y = start_mem_addr / max_mem_addr
         width = lifetime / max_free_time
@@ -91,6 +110,9 @@ def extract_and_plot(log_file_name, net_name):
         ax.add_patch(patches.Rectangle((x, y), width, height, color=colors[i]))
     plt.show()
 
+
 if __name__ == '__main__':
-    extract_and_plot('mlp-mem-info.log', 'MLP')
-    #extract_and_plot('../rnn-mem-info.log', 'MLP')
+    #extract_and_plot('mlp-mem-info.log', 'MLP')
+    #extract_and_plot('alexnet-mem-info.log', 'AlexNet')
+    #extract_and_plot('resnet-mem-info.log', 'ResNet')
+    extract_and_plot('mem-info.log', 'AlexNet')
