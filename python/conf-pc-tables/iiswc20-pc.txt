@@ -1,0 +1,19 @@
+Yan Solihin, University of Central Florida
+Sudhakar Yalamanchili, Georgia Tech
+Lizy John, University of Texas, Austin
+David Kaeli, Northeastern University
+John B. Carter, IBM
+Hyesoon Kim, Georgia Tech
+Huiyang Zhou, North Carolina State University
+Hsien-Hsin Lee, Facebook
+Lieven Eeckhout, Ghent University
+Mark Hempstead, Tufts University
+Martha Kim, Columbia University
+Ravishankar Iyer, Intel
+Resit Sendag, University of Rhode Island
+Thomas Wenisch, University of Michigan
+Lixin Zhang, Chinese Academy of Sciences
+Carole-Jean Wu, Arizona State University
+Antonia Zhai, University of Minnesota
+Eric Chung, Microsoft Research
+David Brooks, Harvard University

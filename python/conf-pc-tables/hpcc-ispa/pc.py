@@ -23,12 +23,31 @@ with open('hpcc.txt', 'r') as hpcc_reader:
         global_info[name] = (institute, country)
 
 print('------------------------------------------------------------')
+ispass_pc_set = set()
+ispass_global_info = {}
+with open('ispass.txt', 'r') as ispass_reader:
+    pc_list = ispass_reader.readlines()
+    for pc in pc_list:
+        pc = pc.rstrip('\n')
+        info = pc.split(',')
+        name, institute = info[0], info[-1]
+        print('{n}, {i}'.format(n=name, i=institute))
+        ispass_pc_set.add(name)
+        ispass_global_info[name] = (name, institute)
+
+print('------------------------------------------------------------')
 print('ISPA PC # {}'.format(len(ispa_pc_set)))
 print('HPCC PC # {}'.format(len(hpcc_pc_set)))
 print('ISPA & HPCC #: {}'.format(len(ispa_pc_set & hpcc_pc_set)))
+print('ISPA & ISPASS #: {}'.format(len(ispa_pc_set & ispass_pc_set)))
 print('------------------------------------------------------------')
 hpcc_ispa_common_pc = ispa_pc_set & hpcc_pc_set
 for pc_name in hpcc_ispa_common_pc:
     print('{n}, {i}, {c}'.format(n=pc_name,
                                  i=global_info[pc_name][0],
                                  c=global_info[pc_name][1]))
+
+print('------------------------------------------------------------')
+ispass_ispa_common_pc = ispa_pc_set & ispass_pc_set
+for pc_name in ispass_ispa_common_pc:
+    print('{}, {}'.format(pc_name, ispass_global_info[name][1]))

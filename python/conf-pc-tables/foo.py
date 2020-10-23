@@ -41,5 +41,13 @@ if __name__ == '__main__':
     mascots20_pc_set = set(mascots20_pc_list)
     print(mascots20_pc_set)
 
+    print('===----------------- IISWC\'20 -----------------===')
+    iiswc20_pc_list = extract_pc_table('iiswc20-pc.txt')
+    iiswc20_pc_set = set(iiswc20_pc_list)
+    print(iiswc20_pc_set)
+
     print('===----------------- PACT\'20 & MASCOTS\'20 -----------------===')
     print(pact20_pc_set & mascots20_pc_set)
+
+    print('===----------------- IISWC\'20 & MASCOTS\'20 -----------------===')
+    print(iiswc20_pc_set & mascots20_pc_set)

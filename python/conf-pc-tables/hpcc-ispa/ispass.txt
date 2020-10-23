@@ -1,0 +1,37 @@
+Tor Aamodt, University of British Columbia
+Jeongseob Ahn, Ajou University
+Gorkem Asilioglu, Michigan Technological University
+Rachata Ausavarungnirun, TGGS, King Mongkut's University of Technology North Bangkok
+Yungang Bao, ICT, CAS
+Martin Burtscher, Texas State University
+Juan M. Cebrian, University of Murcia
+Anupam Chattopadhyay, Nanyang Technological University
+Jeanine Cook, Sandia National Laboratories
+Christina Delimitrou, Cornell University
+Lieven Eeckhout, Ghent University
+Alexandra Ferreron, Google
+Mingyu Gao, Tsinghua University
+Dimitris Gizopoulos, University of Athens
+Nikos Hardavellas, Northwestern University
+Bingsheng He, National University of Singapore
+Wim Heirman, Intel Corporation
+Mark Hempstead, Tufts University
+Yang Hu, UT Dallas
+John Kalamatianos, AMD Research
+Harshad Kasture, Oracle Labs
+Omer Khan, University of Connecticut
+Jangwoo Kim, Seoul National University
+John Kim, KAIST
+Jason Lowe-Power, UC Davis
+Gabriele Mencagli, University of Pisa
+Timothy Merrifield, VMware
+Nikos Nikoleris, Arm Research
+Timothy G. Rogers, Purdue University
+Hamid Sarbazi-Azad, Sharif University of Technology, IPM
+Arrvindh Shriraman, Simon-Fraser University
+Matthew D. Sinclair, University of Wisconsin - Madison, AMD Research
+Daniel Sorin, Duke University
+Hans Vandierendonck, Queen's University of Belfast
+Sam Xi, Google
+Chun Jason Xue, City University of Hong Kong
+Youtao Zhang, Computer Science Department, University of Pittsburgh
