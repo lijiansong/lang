@@ -25,3 +25,6 @@
 [submodule "assembly/wcx64"]
 	path = assembly/wcx64
 	url = https://github.com/eliben/wcx64.git
+[submodule "c/sjtu-ipads-os/jos-labs"]
+	path = c/sjtu-ipads-os/jos-labs
+	url = https://github.com/gousaiyang/jos-labs.git
