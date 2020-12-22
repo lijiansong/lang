@@ -28,3 +28,6 @@
 [submodule "c/sjtu-ipads-os/jos-labs"]
 	path = c/sjtu-ipads-os/jos-labs
 	url = https://github.com/gousaiyang/jos-labs.git
+[submodule "python/exercises-in-programming-style"]
+	path = python/exercises-in-programming-style
+	url = https://github.com/crista/exercises-in-programming-style
