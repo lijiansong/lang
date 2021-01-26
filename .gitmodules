@@ -31,3 +31,6 @@
 [submodule "python/exercises-in-programming-style"]
 	path = python/exercises-in-programming-style
 	url = https://github.com/crista/exercises-in-programming-style
+[submodule "cpp/tensorflow-cpp-op-example"]
+	path = cpp/tensorflow-cpp-op-example
+	url = https://github.com/davidstutz/tensorflow-cpp-op-example
