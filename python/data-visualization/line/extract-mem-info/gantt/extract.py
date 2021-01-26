@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import seaborn as sns
+import random
 
 
 def extract_and_plot(log_file_name,
@@ -93,12 +94,13 @@ def extract_and_plot(log_file_name,
     y0_start_mem_addr = valid_mem_list[0][1]
 
     # 3. plot valid_mem_list
-    colors = sns.color_palette("hls", n_colors=len(valid_mem_list) + 2)
+    colors = sns.color_palette("hls", n_colors=len(valid_mem_list) + 10)
+    random_color_list = list(set(random.sample(range(len(valid_mem_list) + 10), len(valid_mem_list))))
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
-    ax.set_ylabel('Normalized memory address', fontsize=20)
-    ax.set_xlabel('Normalized time', fontsize=20)
-    plt.title(net_name)
+    ax.set_ylabel('Normalized memory address', fontsize=15)
+    ax.set_xlabel('Normalized time stamp', fontsize=15)
+    #plt.title(net_name)
     '''
     :                +------------------+
     :                |                  |
@@ -113,15 +115,15 @@ def extract_and_plot(log_file_name,
         y = (start_mem_addr - y0_start_mem_addr) / max_mem_addr
         width = lifetime / max_free_time
         height = malloc_size / max_mem_addr
-        ax.add_patch(patches.Rectangle((x, y), width, height, color=colors[i]))
+        ax.add_patch(patches.Rectangle((x, y), width, height, color=colors[random_color_list[i]]))
     plt.show()
 
 
 if __name__ == '__main__':
     extract_and_plot('mlp-mem-info.log', 'MLP')
-    extract_and_plot('alexnet-mem-info.log', 'AlexNet')
-    extract_and_plot('resnet-mem-info.log', 'ResNet')
-    extract_and_plot('rnn-mem-info.log', 'RNN')
-    extract_and_plot('xception-mem-info.log', 'Xception')
-    extract_and_plot('gan-graph-mode-mem-info.log', 'GAN')
-    extract_and_plot('gan-seq-mode-mem-info.log', 'GAN')
+    #extract_and_plot('alexnet-mem-info.log', 'AlexNet')
+    #extract_and_plot('resnet-mem-info.log', 'ResNet')
+    #extract_and_plot('rnn-mem-info.log', 'RNN')
+    #extract_and_plot('xception-mem-info.log', 'Xception')
+    #extract_and_plot('gan-graph-mode-mem-info.log', 'GAN')
+    #extract_and_plot('gan-seq-mode-mem-info.log', 'GAN')
