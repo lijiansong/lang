@@ -34,3 +34,6 @@
 [submodule "cpp/tensorflow-cpp-op-example"]
 	path = cpp/tensorflow-cpp-op-example
 	url = https://github.com/davidstutz/tensorflow-cpp-op-example
+[submodule "cpp/soa-aos-data-layout"]
+	path = cpp/soa-aos-data-layout
+	url = https://github.com/crosetto/SoAvsAoS
