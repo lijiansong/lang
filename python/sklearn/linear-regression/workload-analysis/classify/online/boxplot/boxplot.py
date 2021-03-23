@@ -8,7 +8,7 @@ from pandas import ExcelWriter
 from pandas import ExcelFile
 import colorsys
 
-def extract_data(file_name, network_list=['MobileNetV1', 'SqueezeNet', 'DenseNet121', 'ResNet50', 'SSD_MobileNetV1', 'SSD_VGG16']):
+def extract_data(file_name, network_list=['MobileNetV1', 'SqueezeNet', 'DenseNet121', 'ResNet50', 'SM', 'SSD_VGG16']):
     file_reader = open(file_name, 'r')
     # dense-fp16, dense-int8, sparse-fp16, sparse-int8
     res_list = [[] for _ in range(len(network_list)*4)]
@@ -77,21 +77,23 @@ def plot_box(end2end_or_hw, net_list, type_list, throughput_list):
     od['type'] = type_list
     throughput_key = ''
     if 'end2end' in end2end_or_hw:
-        throughput_key = 'end-to-end FPS'
+        throughput_key = 'Normalized end-to-end FPS'
         od[throughput_key] = throughput_list
     else:
-        throughput_key = 'hardware FPS'
+        throughput_key = 'Normalized hardware FPS'
         od[throughput_key] = throughput_list
 
     df = pd.DataFrame(od)
 
     plt.figure(figsize=(10,8))
     if 'end2end' in end2end_or_hw:
-        ax = sns.boxplot(x="net", hue="type", y=throughput_key, data=df, palette="Set3", linewidth=1)
+        ax = sns.boxplot(x="net", hue="type", y=throughput_key, data=df, palette="Set3", linewidth=1, showfliers = False)
     else:
         ax = sns.boxplot(x="net", hue="type", y=throughput_key, data=df, palette="Set3", linewidth=1, showfliers = False)
     ax.yaxis.grid(True)
-    ax.set_xticklabels(ax.get_xticklabels(), rotation=30)
+    ax.set_ylabel(throughput_key, fontsize=18)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=25)
+    plt.xticks(fontsize='15')
     plt.setp(ax.get_legend().get_texts(), fontsize='18')
     #for i, artist in enumerate(ax.artists):
     #    # Set the linecolor on the artist to the facecolor, and set the facecolor to None
