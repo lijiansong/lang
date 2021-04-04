@@ -196,5 +196,11 @@ def extract_and_plot(log_file_name,
 if __name__ == '__main__':
     #extract_and_plot('knn-mem-info.log', 'kNN')
     #extract_and_plot('lr-mem-info.log', 'Logistic')
-    extract_and_plot('kmeans-mem-info.log', 'KMeans')
+    #extract_and_plot('kmeans-mem-info.log', 'KMeans')
+    #extract_and_plot('gbdt-mem-info.log', 'GBDT')
+    #extract_and_plot('ae-mem-info.log', 'Auto-Encoder')
+    #extract_and_plot('bi-rnn-mem-info.log', 'Bi-RNN')
+    #extract_and_plot('dyn-rnn-mem-info.log', 'Dynamic-RNN')
+    #extract_and_plot('lstm-mem-info.log', 'LSTM')
+    extract_and_plot('gan-mem-info.log', 'DCGAN')
     #extract_and_plot('res-mem-info.log', 'ResNet')
