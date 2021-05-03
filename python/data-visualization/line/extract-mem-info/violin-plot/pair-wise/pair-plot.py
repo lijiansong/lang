@@ -21,7 +21,7 @@ def extract_plot(data_file_blob='data.txt', outlier=100.0):
     # 2. scatter plot.
     fig, ax1 = plt.subplots()
     y1_color = 'tab:red'
-    ax1.set_ylabel('Access time intervals(/us)', color=y1_color)
+    ax1.set_ylabel('Access time intervals(/us)', color=y1_color, fontsize=18)
     x_list=[i for i in range(len(access_time_interval_list))]
     #ax1.plot(x_list, access_time_interval_list, 'x', color=y1_color, label='ATIs')
     #ax1.plot(x_list, access_time_interval_list, '-p', color=y1_color, label='ATIs')
@@ -31,7 +31,7 @@ def extract_plot(data_file_blob='data.txt', outlier=100.0):
     # instantiate a second axes that shares the same x-axis
     ax2 = ax1.twinx()
     y2_color = 'tab:blue'
-    ax2.set_ylabel('Memory block size(/MB)', color=y2_color)
+    ax2.set_ylabel('Memory block size(/MB)', color=y2_color, fontsize=18)
     #ax2.plot(x_list, blk_size_list, '+', color=y2_color)
     ax2.plot(x_list, blk_size_list, '.', color=y2_color, label='block size')
     ax2.tick_params(axis='y', labelcolor=y2_color)
@@ -42,11 +42,14 @@ def extract_plot(data_file_blob='data.txt', outlier=100.0):
     # violin plot
     valid_ati_list = list(filter(lambda x: x < outlier, access_time_interval_list))
     ax = sns.violinplot(x=valid_ati_list, orient='h')
-    ax.set_xlabel('Access time interval(/us)')
+    ax.set_xlabel('Access time interval(/us)', fontsize=18)
     plt.show()
 
 if __name__ == '__main__':
+    # Machine Learning cases
     #extract_plot('knn-data.txt', 100.0)
     #extract_plot('kmeans-data.txt', 80.0)
     #extract_plot('log-regr-data.txt', 50.0)
-    extract_plot('gbdt-data.txt', 100.0)
+    #extract_plot('gbdt-data.txt', 100.0)
+    # TF2.0 Deep Learning cases
+    extract_plot('bert-data.txt', 200.0)
