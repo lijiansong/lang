@@ -1,0 +1,145 @@
+Warning: LBR backtrace method is not supported on this platform. DWARF backtrace method will be used.
+Collecting data...
+Max error: 0
+Processing events...
+Capturing symbol files...
+Saving temporary "/tmp/nsys-report-35c4-aa1b-b7e7-b9c1.qdstrm" file to disk...
+Creating final output files...
+
+Processing [0%                                                                ]Processing [====================36%                                           ]Processing [============================================72%                   ]Processing [=============================================73%                  ]Processing [==============================================================99% ]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-35c4-aa1b-b7e7-b9c1.qdrep"
+Exporting 2147 events: [1%                                                    ]Exporting 2147 events: [2%                                                    ]Exporting 2147 events: [3%                                                    ]Exporting 2147 events: [4%                                                    ]Exporting 2147 events: [5%                                                    ]Exporting 2147 events: [=6%                                                   ]Exporting 2147 events: [=7%                                                   ]Exporting 2147 events: [==8%                                                  ]Exporting 2147 events: [==9%                                                  ]Exporting 2147 events: [==10%                                                 ]Exporting 2147 events: [==11%                                                 ]Exporting 2147 events: [===12%                                                ]Exporting 2147 events: [====13%                                               ]Exporting 2147 events: [====14%                                               ]Exporting 2147 events: [=====15%                                              ]Exporting 2147 events: [=====16%                                              ]Exporting 2147 events: [======17%                                             ]Exporting 2147 events: [======18%                                             ]Exporting 2147 events: [=======19%                                            ]Exporting 2147 events: [=======20%                                            ]Exporting 2147 events: [========21%                                           ]Exporting 2147 events: [========22%                                           ]Exporting 2147 events: [=========23%                                          ]Exporting 2147 events: [=========24%                                          ]Exporting 2147 events: [==========25%                                         ]Exporting 2147 events: [===========26%                                        ]Exporting 2147 events: [===========27%                                        ]Exporting 2147 events: [============28%                                       ]Exporting 2147 events: [============29%                                       ]Exporting 2147 events: [=============30%                                      ]Exporting 2147 events: [=============31%                                      ]Exporting 2147 events: [==============32%                                     ]Exporting 2147 events: [==============33%                                     ]Exporting 2147 events: [===============34%                                    ]Exporting 2147 events: [===============35%                                    ]Exporting 2147 events: [================36%                                   ]Exporting 2147 events: [================37%                                   ]Exporting 2147 events: [=================38%                                  ]Exporting 2147 events: [==================39%                                 ]Exporting 2147 events: [==================40%                                 ]Exporting 2147 events: [===================41%                                ]Exporting 2147 events: [===================42%                                ]Exporting 2147 events: [====================43%                               ]Exporting 2147 events: [====================44%                               ]Exporting 2147 events: [=====================45%                              ]Exporting 2147 events: [=====================46%                              ]Exporting 2147 events: [======================47%                             ]Exporting 2147 events: [======================48%                             ]Exporting 2147 events: [=======================49%                            ]Exporting 2147 events: [========================50%                           ]Exporting 2147 events: [========================51%                           ]Exporting 2147 events: [=========================52%                          ]Exporting 2147 events: [=========================53%                          ]Exporting 2147 events: [==========================54%                         ]Exporting 2147 events: [==========================55%                         ]Exporting 2147 events: [===========================56%                        ]Exporting 2147 events: [===========================57%                        ]Exporting 2147 events: [============================58%                       ]Exporting 2147 events: [============================59%                       ]Exporting 2147 events: [=============================60%                      ]Exporting 2147 events: [=============================61%                      ]Exporting 2147 events: [==============================62%                     ]Exporting 2147 events: [===============================63%                    ]Exporting 2147 events: [===============================64%                    ]Exporting 2147 events: [================================65%                   ]Exporting 2147 events: [================================66%                   ]Exporting 2147 events: [=================================67%                  ]Exporting 2147 events: [=================================68%                  ]Exporting 2147 events: [==================================69%                 ]Exporting 2147 events: [==================================70%                 ]Exporting 2147 events: [===================================71%                ]Exporting 2147 events: [===================================72%                ]Exporting 2147 events: [====================================73%               ]Exporting 2147 events: [====================================74%               ]Exporting 2147 events: [=====================================75%              ]Exporting 2147 events: [======================================76%             ]Exporting 2147 events: [======================================77%             ]Exporting 2147 events: [=======================================78%            ]Exporting 2147 events: [=======================================79%            ]Exporting 2147 events: [========================================80%           ]Exporting 2147 events: [========================================81%           ]Exporting 2147 events: [=========================================82%          ]Exporting 2147 events: [=========================================83%          ]Exporting 2147 events: [==========================================84%         ]Exporting 2147 events: [==========================================85%         ]Exporting 2147 events: [===========================================86%        ]Exporting 2147 events: [===========================================87%        ]Exporting 2147 events: [============================================88%       ]Exporting 2147 events: [=============================================89%      ]Exporting 2147 events: [=============================================90%      ]Exporting 2147 events: [==============================================91%     ]Exporting 2147 events: [==============================================92%     ]Exporting 2147 events: [===============================================93%    ]Exporting 2147 events: [===============================================94%    ]Exporting 2147 events: [================================================95%   ]Exporting 2147 events: [================================================96%   ]Exporting 2147 events: [=================================================97%  ]Exporting 2147 events: [=================================================98%  ]Exporting 2147 events: [==================================================99% ]Exporting 2147 events: [==================================================100%]
+
+Exported successfully to
+/tmp/nsys-report-35c4-aa1b-b7e7-b9c1.sqlite
+
+
+CUDA API Statistics:
+
+ Time(%)  Total Time (ns)  Num Calls     Average      Minimum     Maximum            Name         
+ -------  ---------------  ---------  -------------  ---------  -----------  ---------------------
+    99.1      342,568,893          2  171,284,446.5     71,590  342,497,303  cudaMallocManaged    
+     0.5        1,644,699          1    1,644,699.0  1,644,699    1,644,699  cudaDeviceSynchronize
+     0.2          796,630          2      398,315.0    205,367      591,263  cudaMemPrefetchAsync 
+     0.2          644,989          2      322,494.5    297,407      347,582  cudaFree             
+     0.0           32,522          1       32,522.0     32,522       32,522  cudaLaunchKernel     
+
+
+
+CUDA Kernel Statistics:
+
+ Time(%)  Total Time (ns)  Instances  Average   Minimum  Maximum            Name          
+ -------  ---------------  ---------  --------  -------  -------  ------------------------
+   100.0           16,192          1  16,192.0   16,192   16,192  add(int, float*, float*)
+
+
+
+CUDA Memory Operation Statistics (by time):
+
+ Time(%)  Total Time (ns)  Operations   Average   Minimum  Maximum              Operation            
+ -------  ---------------  ----------  ---------  -------  -------  ---------------------------------
+    64.7          702,944           4  175,736.0  174,528  176,224  [CUDA Unified Memory memcpy HtoD]
+    35.3          383,799          24   15,991.6    2,943   82,112  [CUDA Unified Memory memcpy DtoH]
+
+
+
+CUDA Memory Operation Statistics (by size in KiB):
+
+   Total    Operations   Average    Minimum    Maximum               Operation            
+ ---------  ----------  ---------  ---------  ---------  ---------------------------------
+ 8,192.000           4  2,048.000  2,048.000  2,048.000  [CUDA Unified Memory memcpy HtoD]
+ 4,096.000          24    170.667      4.000  1,020.000  [CUDA Unified Memory memcpy DtoH]
+
+
+
+Operating System Runtime API Statistics:
+
+ Time(%)  Total Time (ns)  Num Calls    Average     Minimum    Maximum         Name     
+ -------  ---------------  ---------  ------------  -------  -----------  --------------
+    62.4      427,452,046         22  19,429,638.5   18,037  100,185,022  poll          
+    29.1      199,037,833        757     262,929.8    1,002  108,995,606  ioctl         
+     7.2       49,128,580         16   3,070,536.3   12,542   21,209,621  sem_timedwait 
+     0.6        3,788,145         28     135,290.9    1,007    3,722,052  fopen         
+     0.4        3,000,527         88      34,096.9    1,075      701,995  mmap          
+     0.2        1,405,539         86      16,343.5    3,067       58,410  open64        
+     0.0          247,631          2     123,815.5  102,064      145,567  sem_wait      
+     0.0          198,573          5      39,714.6   29,862       67,428  pthread_create
+     0.0           85,237          3      28,412.3   27,079       30,497  fgets         
+     0.0           59,571         12       4,964.3    2,109       10,847  write         
+     0.0           26,592         11       2,417.5    1,017        3,212  read          
+     0.0           25,646          8       3,205.8    1,248       11,636  munmap        
+     0.0           24,584          5       4,916.8    2,010        9,477  open          
+     0.0           11,781          1      11,781.0   11,781       11,781  pipe2         
+     0.0            9,683          5       1,936.6    1,020        2,657  fread         
+     0.0            8,181          1       8,181.0    8,181        8,181  fflush        
+     0.0            7,172          2       3,586.0    3,237        3,935  socket        
+     0.0            6,302          1       6,302.0    6,302        6,302  fgetc         
+     0.0            5,914          4       1,478.5    1,044        2,291  fclose        
+     0.0            4,941          3       1,647.0    1,203        2,450  fcntl         
+     0.0            4,627          1       4,627.0    4,627        4,627  connect       
+     0.0            2,992          1       2,992.0    2,992        2,992  fwrite        
+
+
+Unable to create output file /home/dataflow/js-lee/bench/nvprof/nsys-log.qdrep : File exists
+Use `--force-overwrite true` to override existing files.
+Please manually fetch report file(s) from:
+* /tmp/nsys-report-35c4-aa1b-b7e7-b9c1.qdrep
+* /tmp/nsys-report-35c4-aa1b-b7e7-b9c1.sqlite
+Using nsys-log.sqlite export for stats reports.
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/cudaapisum.py nsys-log.sqlite] to console... 
+
+Time(%),Total Time (ns),Num Calls,Average,Minimum,Maximum,Name
+98.5,229172665,2,114586332.5,40308,229132357,cudaMallocManaged
+0.7,1644813,1,1644813.0,1644813,1644813,cudaDeviceSynchronize
+0.4,991648,2,495824.0,214886,776762,cudaMemPrefetchAsync
+0.3,691082,2,345541.0,318677,372405,cudaFree
+0.0,45894,1,45894.0,45894,45894,cudaLaunchKernel
+
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/gpukernsum.py nsys-log.sqlite] to console... 
+
+Time(%),Total Time (ns),Instances,Average,Minimum,Maximum,Name
+100.0,16192,1,16192.0,16192,16192,"add(int, float*, float*)"
+
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/gpumemtimesum.py nsys-log.sqlite] to console... 
+
+Time(%),Total Time (ns),Operations,Average,Minimum,Maximum,Operation
+64.7,701377,4,175344.3,174688,176160,[CUDA Unified Memory memcpy HtoD]
+35.3,383476,24,15978.2,2943,82048,[CUDA Unified Memory memcpy DtoH]
+
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/gpumemsizesum.py nsys-log.sqlite] to console... 
+
+Total,Operations,Average,Minimum,Maximum,Operation
+8192.000,4,2048.000,2048.000,2048.000,[CUDA Unified Memory memcpy HtoD]
+4096.000,24,170.667,4.000,1020.000,[CUDA Unified Memory memcpy DtoH]
+
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/osrtsum.py nsys-log.sqlite] to console... 
+
+Time(%),Total Time (ns),Num Calls,Average,Minimum,Maximum,Name
+67.1,287710452,19,15142655.4,18570,100194091,poll
+21.2,91013330,758,120070.4,1050,19313912,ioctl
+9.6,41345584,15,2756372.3,13146,21175970,sem_timedwait
+0.9,3859238,29,133077.2,1075,3785921,fopen
+0.7,3088820,87,35503.7,1114,697434,mmap
+0.3,1332084,86,15489.3,3436,25469,open64
+0.1,259301,2,129650.5,114144,145157,sem_wait
+0.0,187882,5,37576.4,27839,60685,pthread_create
+0.0,91006,3,30335.3,28521,33338,fgets
+0.0,47518,12,3959.8,2036,6481,write
+0.0,35231,5,7046.2,1193,17832,fread
+0.0,26566,5,5313.2,2358,10811,open
+0.0,25317,11,2301.5,1023,3056,read
+0.0,16583,7,2369.0,1104,3721,munmap
+0.0,9067,1,9067.0,9067,9067,putc
+0.0,6940,2,3470.0,2871,4069,socket
+0.0,6472,4,1618.0,1114,2799,fclose
+0.0,6176,1,6176.0,6176,6176,pipe2
+0.0,5930,1,5930.0,5930,5930,fgetc
+0.0,4998,1,4998.0,4998,4998,connect
+0.0,3435,1,3435.0,3435,3435,fwrite
+0.0,3148,1,3148.0,3148,3148,fcntl
+0.0,2660,1,2660.0,2660,2660,bind
+
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/nvtxppsum.py nsys-log.sqlite] to console... SKIPPED: nsys-log.sqlite does not contain NV Tools Extension (NVTX) data
+
+Exporting [/opt/nvidia/nsight-systems/2020.4.3/target-linux-x64/reports/openmpevtsum.py nsys-log.sqlite] to console... SKIPPED: nsys-log.sqlite does not contain OpenMP event data.
+
