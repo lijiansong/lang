@@ -52,4 +52,5 @@ if __name__ == '__main__':
     #extract_plot('log-regr-data.txt', 50.0)
     #extract_plot('gbdt-data.txt', 100.0)
     # TF2.0 Deep Learning cases
-    extract_plot('bert-data.txt', 200.0)
+    #extract_plot('bert-data.txt', 200.0)
+    extract_plot('moe-data.txt', 50.0)
