@@ -95,11 +95,14 @@ def extract_and_plot(log_file_name,
 
     # 3. plot valid_mem_list
     colors = sns.color_palette("hls", n_colors=len(valid_mem_list) + 10)
+    #colors = sns.color_palette("husl", n_colors=len(valid_mem_list) + 10)
+    #colors = sns.color_palette("Set2", n_colors=len(valid_mem_list) + 10)
+    #colors = sns.color_palette("pastel", n_colors=len(valid_mem_list) + 10)
     random_color_list = list(set(random.sample(range(len(valid_mem_list) + 10), len(valid_mem_list))))
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
-    ax.set_ylabel('Normalized memory address', fontsize=15)
-    ax.set_xlabel('Normalized time stamp', fontsize=15)
+    ax.set_ylabel('Norm mem addr', fontsize=15)
+    ax.set_xlabel('Norm time stamp', fontsize=15)
     #plt.title(net_name)
     '''
     :                +------------------+
